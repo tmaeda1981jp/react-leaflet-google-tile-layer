@@ -1,6 +1,6 @@
 {
   "name": "react-leaflet-google-mutant",
-  "version": "3.2.0",
+  "version": "4.0.0",
   "description": "google layer as React compoment for Leaflet",
   "main": "dist/react-leaflet-google-mutant.js",
   "scripts": {
