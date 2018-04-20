@@ -1,5 +1,5 @@
-/* eslint-disable */
 module.exports = {
+  mode: 'production',
   output: {
     library: 'ReactLeaflet',
     libraryTarget: 'umd'
@@ -46,8 +46,8 @@ module.exports = {
     }
   ],
   module: {
-    loaders: [
-      {test: /\.js$/, exclude: /node_modules/, loader: 'babel'}
+    rules: [
+      {test: /\.js$/, exclude: /node_modules/, use: 'babel-loader'}
     ]
   }
 };

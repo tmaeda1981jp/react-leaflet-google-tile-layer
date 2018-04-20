@@ -2,15 +2,15 @@
 var webpack = require('webpack');
 
 module.exports = {
-  debug: true,
+  mode: 'development',
   devtool: 'source-map',
   entry: {
     app: __dirname + '/index.js'
   },
   module: {
-    loaders: [
+    rules: [
       {
-        test: /\.js$/,   exclude: /node_modules/,  loader: 'babel'
+        test: /\.js$/, exclude: /node_modules/, loader: "babel-loader"
       }
     ]
   },
@@ -25,11 +25,10 @@ module.exports = {
         'NODE_ENV': '"development"'
       }
     }),
-    new webpack.NoErrorsPlugin(),
+    new webpack.NoEmitOnErrorsPlugin(),
     new webpack.HotModuleReplacementPlugin()
   ],
   devServer: {
-    colors: true,
     contentBase: __dirname,
     historyApiFallback: true,
     hot: true,

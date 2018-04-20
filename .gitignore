@@ -35,7 +35,10 @@ node_modules
 # Google key maps api
 key.txt
 
-#remove dist and iib
-dist/*
-
+# Remove dist and lib
+dist/main.js
 lib/*
+
+# Remove dist and lib
+.vscode
+.idea
