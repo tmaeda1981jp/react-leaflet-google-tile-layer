@@ -1,11 +1,11 @@
 {
-  "name": "react-leaflet-google-mutant",
-  "version": "4.0.0",
+  "name": "react-leaflet-google-tile-layer",
+  "version": "4.0.3",
   "description": "google layer as React compoment for Leaflet",
-  "main": "dist/react-leaflet-google-mutant.js",
+  "main": "dist/react-leaflet-google-tile-layer.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build:dist": "webpack src/index.js dist/react-leaflet-google-mutant.js & webpack -p src/index.js dist/react-leaflet-google-mutant.min.js",
+    "build:dist": "webpack src/index.js dist/react-leaflet-google-tile-layer.js & webpack -p src/index.js dist/react-leaflet-google-tile-layer.min.js",
     "build": "npm run build:dist",
     "example": "webpack-dev-server --config ./example/webpack.config.js",
     "lint": "eslint ./src",
@@ -16,7 +16,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+ssh://git@github.com:ivan-hilckov/react-leaflet-google-mutant.git"
+    "url": "git+ssh://git@github.com:ivan-hilckov/react-leaflet-google-tile-layer.git"
   },
   "keywords": [
     "react",
@@ -26,9 +26,9 @@
   "author": "Ivan Khilkov",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/ivan-hilckov/react-leaflet-google-mutant/issues"
+    "url": "https://github.com/ivan-hilckov/react-leaflet-google-tile-layer/issues"
   },
-  "homepage": "https://github.com/ivan-hilckov/react-leaflet-google-mutant#readme",
+  "homepage": "https://github.com/ivan-hilckov/react-leaflet-google-tile-layer#readme",
   "devDependencies": {
     "babel-cli": "^6.8.0",
     "babel-core": "^6.26.0",
