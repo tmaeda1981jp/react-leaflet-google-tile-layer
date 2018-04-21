@@ -1,1680 +1,260 @@
 (function webpackUniversalModuleDefinition(root, factory) {
 	if(typeof exports === 'object' && typeof module === 'object')
-		module.exports = factory(require("react"), require("react-leaflet"), require("google-maps"));
+		module.exports = factory(require("google-maps"), require("react"), require("react-leaflet"));
 	else if(typeof define === 'function' && define.amd)
-		define(["react", "react-leaflet", "google-maps"], factory);
+		define(["google-maps", "react", "react-leaflet"], factory);
 	else if(typeof exports === 'object')
-		exports["ReactLeaflet"] = factory(require("react"), require("react-leaflet"), require("google-maps"));
+		exports["ReactLeaflet"] = factory(require("google-maps"), require("react"), require("react-leaflet"));
 	else
-		root["ReactLeaflet"] = factory(root["React"], root[undefined], root["GoogleMapsLoader"]);
-})(this, function(__WEBPACK_EXTERNAL_MODULE_2__, __WEBPACK_EXTERNAL_MODULE_12__, __WEBPACK_EXTERNAL_MODULE_14__) {
+		root["ReactLeaflet"] = factory(root["GoogleMapsLoader"], root["React"], root[undefined]);
+})(window, function(__WEBPACK_EXTERNAL_MODULE_google_maps__, __WEBPACK_EXTERNAL_MODULE_react__, __WEBPACK_EXTERNAL_MODULE_react_leaflet__) {
 return /******/ (function(modules) { // webpackBootstrap
 /******/ 	// The module cache
 /******/ 	var installedModules = {};
-
+/******/
 /******/ 	// The require function
 /******/ 	function __webpack_require__(moduleId) {
-
+/******/
 /******/ 		// Check if module is in cache
-/******/ 		if(installedModules[moduleId])
+/******/ 		if(installedModules[moduleId]) {
 /******/ 			return installedModules[moduleId].exports;
-
+/******/ 		}
 /******/ 		// Create a new module (and put it into the cache)
 /******/ 		var module = installedModules[moduleId] = {
-/******/ 			exports: {},
-/******/ 			id: moduleId,
-/******/ 			loaded: false
+/******/ 			i: moduleId,
+/******/ 			l: false,
+/******/ 			exports: {}
 /******/ 		};
-
+/******/
 /******/ 		// Execute the module function
 /******/ 		modules[moduleId].call(module.exports, module, module.exports, __webpack_require__);
-
+/******/
 /******/ 		// Flag the module as loaded
-/******/ 		module.loaded = true;
-
+/******/ 		module.l = true;
+/******/
 /******/ 		// Return the exports of the module
 /******/ 		return module.exports;
 /******/ 	}
-
-
+/******/
+/******/
 /******/ 	// expose the modules object (__webpack_modules__)
 /******/ 	__webpack_require__.m = modules;
-
+/******/
 /******/ 	// expose the module cache
 /******/ 	__webpack_require__.c = installedModules;
-
+/******/
+/******/ 	// define getter function for harmony exports
+/******/ 	__webpack_require__.d = function(exports, name, getter) {
+/******/ 		if(!__webpack_require__.o(exports, name)) {
+/******/ 			Object.defineProperty(exports, name, {
+/******/ 				configurable: false,
+/******/ 				enumerable: true,
+/******/ 				get: getter
+/******/ 			});
+/******/ 		}
+/******/ 	};
+/******/
+/******/ 	// define __esModule on exports
+/******/ 	__webpack_require__.r = function(exports) {
+/******/ 		Object.defineProperty(exports, '__esModule', { value: true });
+/******/ 	};
+/******/
+/******/ 	// getDefaultExport function for compatibility with non-harmony modules
+/******/ 	__webpack_require__.n = function(module) {
+/******/ 		var getter = module && module.__esModule ?
+/******/ 			function getDefault() { return module['default']; } :
+/******/ 			function getModuleExports() { return module; };
+/******/ 		__webpack_require__.d(getter, 'a', getter);
+/******/ 		return getter;
+/******/ 	};
+/******/
+/******/ 	// Object.prototype.hasOwnProperty.call
+/******/ 	__webpack_require__.o = function(object, property) { return Object.prototype.hasOwnProperty.call(object, property); };
+/******/
 /******/ 	// __webpack_public_path__
 /******/ 	__webpack_require__.p = "";
-
+/******/
+/******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(0);
+/******/ 	return __webpack_require__(__webpack_require__.s = "./src/index.js");
 /******/ })
 /************************************************************************/
-/******/ ([
-/* 0 */
+/******/ ({
+
+/***/ "./node_modules/fbjs/lib/emptyFunction.js":
+/*!************************************************!*\
+  !*** ./node_modules/fbjs/lib/emptyFunction.js ***!
+  \************************************************/
+/*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-	"use strict";
-
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-	exports.GoogleLayer = undefined;
-
-	var _Google = __webpack_require__(1);
-
-	var _Google2 = _interopRequireDefault(_Google);
-
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-	exports.GoogleLayer = _Google2.default;
+"use strict";
+eval("\n\n/**\n * Copyright (c) 2013-present, Facebook, Inc.\n *\n * This source code is licensed under the MIT license found in the\n * LICENSE file in the root directory of this source tree.\n *\n * \n */\n\nfunction makeEmptyFunction(arg) {\n  return function () {\n    return arg;\n  };\n}\n\n/**\n * This function accepts and discards inputs; it has no side effects. This is\n * primarily useful idiomatically for overridable function endpoints which\n * always need to be callable, since JS lacks a null-call idiom ala Cocoa.\n */\nvar emptyFunction = function emptyFunction() {};\n\nemptyFunction.thatReturns = makeEmptyFunction;\nemptyFunction.thatReturnsFalse = makeEmptyFunction(false);\nemptyFunction.thatReturnsTrue = makeEmptyFunction(true);\nemptyFunction.thatReturnsNull = makeEmptyFunction(null);\nemptyFunction.thatReturnsThis = function () {\n  return this;\n};\nemptyFunction.thatReturnsArgument = function (arg) {\n  return arg;\n};\n\nmodule.exports = emptyFunction;\n\n//# sourceURL=webpack://ReactLeaflet/./node_modules/fbjs/lib/emptyFunction.js?");
 
 /***/ }),
-/* 1 */
+
+/***/ "./node_modules/fbjs/lib/invariant.js":
+/*!********************************************!*\
+  !*** ./node_modules/fbjs/lib/invariant.js ***!
+  \********************************************/
+/*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-	'use strict';
-
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-
-	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-	var _get = function get(object, property, receiver) { if (object === null) object = Function.prototype; var desc = Object.getOwnPropertyDescriptor(object, property); if (desc === undefined) { var parent = Object.getPrototypeOf(object); if (parent === null) { return undefined; } else { return get(parent, property, receiver); } } else if ("value" in desc) { return desc.value; } else { var getter = desc.get; if (getter === undefined) { return undefined; } return getter.call(receiver); } };
-
-	var _react = __webpack_require__(2);
-
-	var _react2 = _interopRequireDefault(_react);
-
-	var _propTypes = __webpack_require__(3);
-
-	var _propTypes2 = _interopRequireDefault(_propTypes);
-
-	var _reactLeaflet = __webpack_require__(12);
-
-	var _leaflet = __webpack_require__(13);
-
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-	function _objectWithoutProperties(obj, keys) { var target = {}; for (var i in obj) { if (keys.indexOf(i) >= 0) continue; if (!Object.prototype.hasOwnProperty.call(obj, i)) continue; target[i] = obj[i]; } return target; }
-
-	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-	var GoogleLayer = function (_GridLayer) {
-	  _inherits(GoogleLayer, _GridLayer);
-
-	  function GoogleLayer() {
-	    _classCallCheck(this, GoogleLayer);
-
-	    return _possibleConstructorReturn(this, (GoogleLayer.__proto__ || Object.getPrototypeOf(GoogleLayer)).apply(this, arguments));
-	  }
-
-	  _createClass(GoogleLayer, [{
-	    key: 'componentWillMount',
-	    value: function componentWillMount() {
-	      _get(GoogleLayer.prototype.__proto__ || Object.getPrototypeOf(GoogleLayer.prototype), 'componentWillMount', this).call(this);
-
-	      var _props = this.props,
-	          _map = _props.map,
-	          googlekey = _props.googlekey,
-	          maptype = _props.maptype,
-	          asclientid = _props.asclientid,
-	          props = _objectWithoutProperties(_props, ['map', 'googlekey', 'maptype', 'asclientid']);
-
-	      this.leafletElement = new L.gridLayer.googleMutant(this.props);
-	    }
-	  }, {
-	    key: 'componentDidUpdate',
-	    value: function componentDidUpdate(prevProps) {
-	      var _props2 = this.props,
-	          opacity = _props2.opacity,
-	          zIndex = _props2.zIndex;
-
-	      if (opacity !== prevProps.opacity) {
-	        this.leafletElement.setOpacity(opacity);
-	      }
-	      if (zIndex !== prevProps.zIndex) {
-	        this.leafletElement.setZIndex(zIndex);
-	      }
-	    }
-	  }]);
-
-	  return GoogleLayer;
-	}(_reactLeaflet.GridLayer);
-
-	GoogleLayer.propTypes = {
-	  googlekey: _propTypes2.default.string.isRequired,
-	  maptype: _propTypes2.default.string,
-	  asclientid: _propTypes2.default.bool
-	};
-	GoogleLayer.contextTypes = _reactLeaflet.GridLayer.contextTypes;
-	GoogleLayer.childContextTypes = _reactLeaflet.GridLayer.childContextTypes;
-	exports.default = GoogleLayer;
+"use strict";
+eval("/**\n * Copyright (c) 2013-present, Facebook, Inc.\n *\n * This source code is licensed under the MIT license found in the\n * LICENSE file in the root directory of this source tree.\n *\n */\n\n\n\n/**\n * Use invariant() to assert state which your program assumes to be true.\n *\n * Provide sprintf-style format (only %s is supported) and arguments\n * to provide information about what broke and what you were\n * expecting.\n *\n * The invariant message will be stripped in production, but the invariant\n * will remain to ensure logic does not differ in production.\n */\n\nvar validateFormat = function validateFormat(format) {};\n\nif (true) {\n  validateFormat = function validateFormat(format) {\n    if (format === undefined) {\n      throw new Error('invariant requires an error message argument');\n    }\n  };\n}\n\nfunction invariant(condition, format, a, b, c, d, e, f) {\n  validateFormat(format);\n\n  if (!condition) {\n    var error;\n    if (format === undefined) {\n      error = new Error('Minified exception occurred; use the non-minified dev environment ' + 'for the full error message and additional helpful warnings.');\n    } else {\n      var args = [a, b, c, d, e, f];\n      var argIndex = 0;\n      error = new Error(format.replace(/%s/g, function () {\n        return args[argIndex++];\n      }));\n      error.name = 'Invariant Violation';\n    }\n\n    error.framesToPop = 1; // we don't care about invariant's own frame\n    throw error;\n  }\n}\n\nmodule.exports = invariant;\n\n//# sourceURL=webpack://ReactLeaflet/./node_modules/fbjs/lib/invariant.js?");
 
 /***/ }),
-/* 2 */
+
+/***/ "./node_modules/fbjs/lib/warning.js":
+/*!******************************************!*\
+  !*** ./node_modules/fbjs/lib/warning.js ***!
+  \******************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+eval("/**\n * Copyright (c) 2014-present, Facebook, Inc.\n *\n * This source code is licensed under the MIT license found in the\n * LICENSE file in the root directory of this source tree.\n *\n */\n\n\n\nvar emptyFunction = __webpack_require__(/*! ./emptyFunction */ \"./node_modules/fbjs/lib/emptyFunction.js\");\n\n/**\n * Similar to invariant but only logs a warning if the condition is not met.\n * This can be used to log issues in development environments in critical\n * paths. Removing the logging code for production environments will keep the\n * same logic and follow the same code paths.\n */\n\nvar warning = emptyFunction;\n\nif (true) {\n  var printWarning = function printWarning(format) {\n    for (var _len = arguments.length, args = Array(_len > 1 ? _len - 1 : 0), _key = 1; _key < _len; _key++) {\n      args[_key - 1] = arguments[_key];\n    }\n\n    var argIndex = 0;\n    var message = 'Warning: ' + format.replace(/%s/g, function () {\n      return args[argIndex++];\n    });\n    if (typeof console !== 'undefined') {\n      console.error(message);\n    }\n    try {\n      // --- Welcome to debugging React ---\n      // This error was thrown as a convenience so that you can use this stack\n      // to find the callsite that caused this warning to fire.\n      throw new Error(message);\n    } catch (x) {}\n  };\n\n  warning = function warning(condition, format) {\n    if (format === undefined) {\n      throw new Error('`warning(condition, format, ...args)` requires a warning ' + 'message argument');\n    }\n\n    if (format.indexOf('Failed Composite propType: ') === 0) {\n      return; // Ignore CompositeComponent proptype check.\n    }\n\n    if (!condition) {\n      for (var _len2 = arguments.length, args = Array(_len2 > 2 ? _len2 - 2 : 0), _key2 = 2; _key2 < _len2; _key2++) {\n        args[_key2 - 2] = arguments[_key2];\n      }\n\n      printWarning.apply(undefined, [format].concat(args));\n    }\n  };\n}\n\nmodule.exports = warning;\n\n//# sourceURL=webpack://ReactLeaflet/./node_modules/fbjs/lib/warning.js?");
+
+/***/ }),
+
+/***/ "./node_modules/leaflet.gridlayer.googlemutant/Leaflet.GoogleMutant.js":
+/*!*****************************************************************************!*\
+  !*** ./node_modules/leaflet.gridlayer.googlemutant/Leaflet.GoogleMutant.js ***!
+  \*****************************************************************************/
+/*! no static exports found */
 /***/ (function(module, exports) {
 
-	module.exports = __WEBPACK_EXTERNAL_MODULE_2__;
+eval("// Based on https://github.com/shramov/leaflet-plugins\n// GridLayer like https://avinmathew.com/leaflet-and-google-maps/ , but using MutationObserver instead of jQuery\n\n\n// 🍂class GridLayer.GoogleMutant\n// 🍂extends GridLayer\nL.GridLayer.GoogleMutant = L.GridLayer.extend({\n\toptions: {\n\t\tminZoom: 0,\n\t\tmaxZoom: 23,\n\t\ttileSize: 256,\n\t\tsubdomains: 'abc',\n\t\terrorTileUrl: '',\n\t\tattribution: '',\t// The mutant container will add its own attribution anyways.\n\t\topacity: 1,\n\t\tcontinuousWorld: false,\n\t\tnoWrap: false,\n\t\t// 🍂option type: String = 'roadmap'\n\t\t// Google's map type. Valid values are 'roadmap', 'satellite' or 'terrain'. 'hybrid' is not really supported.\n\t\ttype: 'roadmap',\n\t\tmaxNativeZoom: 21\n\t},\n\n\tinitialize: function (options) {\n\t\tL.GridLayer.prototype.initialize.call(this, options);\n\n\t\tthis._ready = !!window.google && !!window.google.maps && !!window.google.maps.Map;\n\n\t\tthis._GAPIPromise = this._ready ? Promise.resolve(window.google) : new Promise(function (resolve, reject) {\n\t\t\tvar checkCounter = 0;\n\t\t\tvar intervalId = null;\n\t\t\tintervalId = setInterval(function () {\n\t\t\t\tif (checkCounter >= 10) {\n\t\t\t\t\tclearInterval(intervalId);\n\t\t\t\t\treturn reject(new Error('window.google not found after 10 attempts'));\n\t\t\t\t}\n\t\t\t\tif (!!window.google && !!window.google.maps && !!window.google.maps.Map) {\n\t\t\t\t\tclearInterval(intervalId);\n\t\t\t\t\treturn resolve(window.google);\n\t\t\t\t}\n\t\t\t\tcheckCounter++;\n\t\t\t}, 500);\n\t\t});\n\n\t\t// Couple data structures indexed by tile key\n\t\tthis._tileCallbacks = {};\t// Callbacks for promises for tiles that are expected\n\t\tthis._freshTiles = {};\t// Tiles from the mutant which haven't been requested yet\n\n\t\tthis._imagesPerTile = (this.options.type === 'hybrid') ? 2 : 1;\n\t},\n\n\tonAdd: function (map) {\n\t\tL.GridLayer.prototype.onAdd.call(this, map);\n\t\tthis._initMutantContainer();\n\n\t\tthis._GAPIPromise.then(function () {\n\t\t\tthis._ready = true;\n\t\t\tthis._map = map;\n\n\t\t\tthis._initMutant();\n\n\t\t\tmap.on('viewreset', this._reset, this);\n\t\t\tmap.on('move', this._update, this);\n\t\t\tmap.on('zoomend', this._handleZoomAnim, this);\n\t\t\tmap.on('resize', this._resize, this);\n\n\t\t\t//handle layer being added to a map for which there are no Google tiles at the given zoom\n\t\t\tgoogle.maps.event.addListenerOnce(this._mutant, 'idle', function () {\n\t\t\t\tthis._checkZoomLevels();\n\t\t\t\tthis._mutantIsReady = true;\n\t\t\t}.bind(this));\n\n\t\t\t//20px instead of 1em to avoid a slight overlap with google's attribution\n\t\t\tmap._controlCorners.bottomright.style.marginBottom = '20px';\n\t\t\tmap._controlCorners.bottomleft.style.marginBottom = '20px';\n\n\t\t\tthis._reset();\n\t\t\tthis._update();\n\n\t\t\tif (this._subLayers) {\n\t\t\t\t//restore previously added google layers\n\t\t\t\tfor (var layerName in this._subLayers) {\n\t\t\t\t\tthis._subLayers[layerName].setMap(this._mutant);\n\t\t\t\t}\n\t\t\t}\n\t\t}.bind(this));\n\t},\n\n\tonRemove: function (map) {\n\t\tL.GridLayer.prototype.onRemove.call(this, map);\n\t\tmap._container.removeChild(this._mutantContainer);\n\t\tthis._mutantContainer = undefined;\n\n\t\tgoogle.maps.event.clearListeners(map, 'idle');\n\t\tgoogle.maps.event.clearListeners(this._mutant, 'idle');\n\t\tmap.off('viewreset', this._reset, this);\n\t\tmap.off('move', this._update, this);\n\t\tmap.off('zoomend', this._handleZoomAnim, this);\n\t\tmap.off('resize', this._resize, this);\n\n\t\tif (map._controlCorners) {\n\t\t\tmap._controlCorners.bottomright.style.marginBottom = '0em';\n\t\t\tmap._controlCorners.bottomleft.style.marginBottom = '0em';\n\t\t}\n\t},\n\n\tgetAttribution: function () {\n\t\treturn this.options.attribution;\n\t},\n\n\tsetOpacity: function (opacity) {\n\t\tthis.options.opacity = opacity;\n\t\tif (opacity < 1) {\n\t\t\tL.DomUtil.setOpacity(this._mutantContainer, opacity);\n\t\t}\n\t},\n\n\tsetElementSize: function (e, size) {\n\t\te.style.width = size.x + 'px';\n\t\te.style.height = size.y + 'px';\n\t},\n\n\n\taddGoogleLayer: function (googleLayerName, options) {\n\t\tif (!this._subLayers) this._subLayers = {};\n\t\treturn this._GAPIPromise.then(function () {\n\t\t\tvar Constructor = google.maps[googleLayerName];\n\t\t\tvar googleLayer = new Constructor(options);\n\t\t\tgoogleLayer.setMap(this._mutant);\n\t\t\tthis._subLayers[googleLayerName] = googleLayer;\n\t\t\treturn googleLayer;\n\t\t}.bind(this));\n\t},\n\n\tremoveGoogleLayer: function (googleLayerName) {\n\t\tvar googleLayer = this._subLayers && this._subLayers[googleLayerName];\n\t\tif (!googleLayer) return;\n\n\t\tgoogleLayer.setMap(null);\n\t\tdelete this._subLayers[googleLayerName];\n\t},\n\n\n\t_initMutantContainer: function () {\n\t\tif (!this._mutantContainer) {\n\t\t\tthis._mutantContainer = L.DomUtil.create('div', 'leaflet-google-mutant leaflet-top leaflet-left');\n\t\t\tthis._mutantContainer.id = '_MutantContainer_' + L.Util.stamp(this._mutantContainer);\n\t\t\tthis._mutantContainer.style.zIndex = '800'; //leaflet map pane at 400, controls at 1000\n\t\t\tthis._mutantContainer.style.pointerEvents = 'none';\n\n\t\t\tthis._map.getContainer().appendChild(this._mutantContainer);\n\t\t}\n\n\t\tthis.setOpacity(this.options.opacity);\n\t\tthis.setElementSize(this._mutantContainer, this._map.getSize());\n\n\t\tthis._attachObserver(this._mutantContainer);\n\t},\n\n\t_initMutant: function () {\n\t\tif (!this._ready || !this._mutantContainer) return;\n\t\tthis._mutantCenter = new google.maps.LatLng(0, 0);\n\n\t\tvar map = new google.maps.Map(this._mutantContainer, {\n\t\t\tcenter: this._mutantCenter,\n\t\t\tzoom: 0,\n\t\t\ttilt: 0,\n\t\t\tmapTypeId: this.options.type,\n\t\t\tdisableDefaultUI: true,\n\t\t\tkeyboardShortcuts: false,\n\t\t\tdraggable: false,\n\t\t\tdisableDoubleClickZoom: true,\n\t\t\tscrollwheel: false,\n\t\t\tstreetViewControl: false,\n\t\t\tstyles: this.options.styles || {},\n\t\t\tbackgroundColor: 'transparent'\n\t\t});\n\n\t\tthis._mutant = map;\n\n\t\tgoogle.maps.event.addListenerOnce(map, 'idle', function () {\n\t\t\tvar nodes = this._mutantContainer.querySelectorAll('a');\n\t\t\tfor (var i = 0; i < nodes.length; i++) {\n\t\t\t\tnodes[i].style.pointerEvents = 'auto';\n\t\t\t}\n\t\t}.bind(this));\n\n\t\t// 🍂event spawned\n\t\t// Fired when the mutant has been created.\n\t\tthis.fire('spawned', {mapObject: map});\n\t},\n\n\t_attachObserver: function _attachObserver (node) {\n// \t\tconsole.log('Gonna observe', node);\n\n\t\tvar observer = new MutationObserver(this._onMutations.bind(this));\n\n\t\t// pass in the target node, as well as the observer options\n\t\tobserver.observe(node, { childList: true, subtree: true });\n\t},\n\n\t_onMutations: function _onMutations (mutations) {\n\t\tfor (var i = 0; i < mutations.length; ++i) {\n\t\t\tvar mutation = mutations[i];\n\t\t\tfor (var j = 0; j < mutation.addedNodes.length; ++j) {\n\t\t\t\tvar node = mutation.addedNodes[j];\n\n\t\t\t\tif (node instanceof HTMLImageElement) {\n\t\t\t\t\tthis._onMutatedImage(node);\n\t\t\t\t} else if (node instanceof HTMLElement) {\n\t\t\t\t\tArray.prototype.forEach.call(node.querySelectorAll('img'), this._onMutatedImage.bind(this));\n\t\t\t\t}\n\t\t\t}\n\t\t}\n\t},\n\n\t// Only images which 'src' attrib match this will be considered for moving around.\n\t// Looks like some kind of string-based protobuf, maybe??\n\t// Only the roads (and terrain, and vector-based stuff) match this pattern\n\t_roadRegexp: /!1i(\\d+)!2i(\\d+)!3i(\\d+)!/,\n\n\t// On the other hand, raster imagery matches this other pattern\n\t_satRegexp: /x=(\\d+)&y=(\\d+)&z=(\\d+)/,\n\n\t// On small viewports, when zooming in/out, a static image is requested\n\t// This will not be moved around, just removed from the DOM.\n\t_staticRegExp: /StaticMapService\\.GetMapImage/,\n\n\t_onMutatedImage: function _onMutatedImage (imgNode) {\n// \t\tif (imgNode.src) {\n// \t\t\tconsole.log('caught mutated image: ', imgNode.src);\n// \t\t}\n\n\t\tvar coords;\n\t\tvar match = imgNode.src.match(this._roadRegexp);\n\t\tvar sublayer = 0;\n\n\t\tif (match) {\n\t\t\tcoords = {\n\t\t\t\tz: match[1],\n\t\t\t\tx: match[2],\n\t\t\t\ty: match[3]\n\t\t\t};\n\t\t\tif (this._imagesPerTile > 1) { \n\t\t\t\timgNode.style.zIndex = 1;\n\t\t\t\tsublayer = 1;\n\t\t\t}\n\t\t} else {\n\t\t\tmatch = imgNode.src.match(this._satRegexp);\n\t\t\tif (match) {\n\t\t\t\tcoords = {\n\t\t\t\t\tx: match[1],\n\t\t\t\t\ty: match[2],\n\t\t\t\t\tz: match[3]\n\t\t\t\t};\n\t\t\t}\n// \t\t\timgNode.style.zIndex = 0;\n\t\t\tsublayer = 0;\n\t\t}\n\n\t\tif (coords) {\n\t\t\tvar tileKey = this._tileCoordsToKey(coords);\n\t\t\timgNode.style.position = 'absolute';\n\t\t\timgNode.style.visibility = 'hidden';\n\n\t\t\tvar key = tileKey + '/' + sublayer;\n\t\t\t// console.log('mutation for tile', key)\n\t\t\t//store img so it can also be used in subsequent tile requests\n\t\t\tthis._freshTiles[key] = imgNode;\n\n\t\t\tif (key in this._tileCallbacks && this._tileCallbacks[key]) {\n// console.log('Fullfilling callback ', key);\n\t\t\t\t//fullfill most recent tileCallback because there maybe callbacks that will never get a \n\t\t\t\t//corresponding mutation (because map moved to quickly...)\n\t\t\t\tthis._tileCallbacks[key].pop()(imgNode); \n\t\t\t\tif (!this._tileCallbacks[key].length) { delete this._tileCallbacks[key]; }\n\t\t\t} else {\n\t\t\t\tif (this._tiles[tileKey]) {\n\t\t\t\t\t//we already have a tile in this position (mutation is probably a google layer being added)\n\t\t\t\t\t//replace it\n\t\t\t\t\tvar c = this._tiles[tileKey].el;\n\t\t\t\t\tvar oldImg = (sublayer === 0) ? c.firstChild : c.firstChild.nextSibling;\n\t\t\t\t\tvar cloneImgNode = this._clone(imgNode);\n\t\t\t\t\tc.replaceChild(cloneImgNode, oldImg);\n\t\t\t\t}\n\t\t\t}\n\t\t} else if (imgNode.src.match(this._staticRegExp)) {\n\t\t\timgNode.style.visibility = 'hidden';\n\t\t}\n\t},\n\n\n\tcreateTile: function (coords, done) {\n\t\tvar key = this._tileCoordsToKey(coords);\n\n\t\tvar tileContainer = L.DomUtil.create('div');\n\t\ttileContainer.dataset.pending = this._imagesPerTile;\n\t\tdone = done.bind(this, null, tileContainer);\n\n\t\tfor (var i = 0; i < this._imagesPerTile; i++) {\n\t\t\tvar key2 = key + '/' + i;\n\t\t\tif (key2 in this._freshTiles) {\n\t\t\t\tvar imgNode = this._freshTiles[key2];\n\t\t\t\ttileContainer.appendChild(this._clone(imgNode));\n\t\t\t\ttileContainer.dataset.pending--;\n// \t\t\t\tconsole.log('Got ', key2, ' from _freshTiles');\n\t\t\t} else {\n\t\t\t\tthis._tileCallbacks[key2] = this._tileCallbacks[key2] || [];\n\t\t\t\tthis._tileCallbacks[key2].push( (function (c/*, k2*/) {\n\t\t\t\t\treturn function (imgNode) {\n\t\t\t\t\t\tc.appendChild(this._clone(imgNode));\n\t\t\t\t\t\tc.dataset.pending--;\n\t\t\t\t\t\tif (!parseInt(c.dataset.pending)) { done(); }\n// \t\t\t\t\t\tconsole.log('Sent ', k2, ' to _tileCallbacks, still ', c.dataset.pending, ' images to go');\n\t\t\t\t\t}.bind(this);\n\t\t\t\t}.bind(this))(tileContainer/*, key2*/) );\n\t\t\t}\n\t\t}\n\n\t\tif (!parseInt(tileContainer.dataset.pending)) {\n\t\t\tL.Util.requestAnimFrame(done);\n\t\t}\n\t\treturn tileContainer;\n\t},\n\n\t_clone: function (imgNode) {\n\t\tvar clonedImgNode = imgNode.cloneNode(true);\n\t\tclonedImgNode.style.visibility = 'visible';\n\t\treturn clonedImgNode;\n\t},\n\n\t_checkZoomLevels: function () {\n\t\t//setting the zoom level on the Google map may result in a different zoom level than the one requested\n\t\t//(it won't go beyond the level for which they have data).\n\t\tvar zoomLevel = this._map.getZoom();\n\t\tvar gMapZoomLevel = this._mutant.getZoom();\n\t\tif (!zoomLevel || !gMapZoomLevel) return;\n\n\n\t\tif ((gMapZoomLevel !== zoomLevel) || //zoom levels are out of sync, Google doesn't have data\n\t\t\t(gMapZoomLevel > this.options.maxNativeZoom)) { //at current location, Google does have data (contrary to maxNativeZoom)\n\t\t\t//Update maxNativeZoom\n\t\t\tthis._setMaxNativeZoom(gMapZoomLevel);\n\t\t}\n\t},\n\n\t_setMaxNativeZoom: function (zoomLevel) {\n\t\tif (zoomLevel != this.options.maxNativeZoom) {\n\t\t\tthis.options.maxNativeZoom = zoomLevel;\n\t\t\tthis._resetView();\n\t\t}\n\t},\n\n\t_reset: function () {\n\t\tthis._initContainer();\n\t},\n\n\t_update: function () {\n\t\t// zoom level check needs to happen before super's implementation (tile addition/creation)\n\t\t// otherwise tiles may be missed if maxNativeZoom is not yet correctly determined\n\t\tif (this._mutant) {\n\t\t\tvar center = this._map.getCenter();\n\t\t\tvar _center = new google.maps.LatLng(center.lat, center.lng);\n\n\t\t\tthis._mutant.setCenter(_center);\n\t\t\tvar zoom = this._map.getZoom();\n\t\t\tvar fractionalLevel = zoom !== Math.round(zoom);\n\t\t\tvar mutantZoom = this._mutant.getZoom();\n\n\t\t\t//ignore fractional zoom levels\n\t\t\tif (!fractionalLevel && (zoom != mutantZoom)) {\n\t\t\t\tthis._mutant.setZoom(zoom);\n\t\t\t\t\t\t\t\n\t\t\t\tif (this._mutantIsReady) this._checkZoomLevels();\n\t\t\t\t//else zoom level check will be done later by 'idle' handler\n\t\t\t}\n\t\t}\n\n\t\tL.GridLayer.prototype._update.call(this);\n\t},\n\n\t_resize: function () {\n\t\tvar size = this._map.getSize();\n\t\tif (this._mutantContainer.style.width === size.x &&\n\t\t\tthis._mutantContainer.style.height === size.y)\n\t\t\treturn;\n\t\tthis.setElementSize(this._mutantContainer, size);\n\t\tif (!this._mutant) return;\n\t\tgoogle.maps.event.trigger(this._mutant, 'resize');\n\t},\n\n\t_handleZoomAnim: function () {\n\t\tif (!this._mutant) return;\n\t\tvar center = this._map.getCenter();\n\t\tvar _center = new google.maps.LatLng(center.lat, center.lng);\n\n\t\tthis._mutant.setCenter(_center);\n\t\tthis._mutant.setZoom(Math.round(this._map.getZoom()));\n\t},\n\n\t// Agressively prune _freshtiles when a tile with the same key is removed,\n\t// this prevents a problem where Leaflet keeps a loaded tile longer than\n\t// GMaps, so that GMaps makes two requests but Leaflet only consumes one,\n\t// polluting _freshTiles with stale data.\n\t_removeTile: function (key) {\n\t\tif (!this._mutant) return;\n\n\t\t//give time for animations to finish before checking it tile should be pruned\n\t\tsetTimeout(this._pruneTile.bind(this, key), 1000);\n\n\n\t\treturn L.GridLayer.prototype._removeTile.call(this, key);\n\t},\n\n\t_pruneTile: function (key) {\n\t\tvar gZoom = this._mutant.getZoom();\n\t\tvar tileZoom = key.split(':')[2];\n\t\tvar googleBounds = this._mutant.getBounds();\n\t\tvar sw = googleBounds.getSouthWest();\n\t\tvar ne = googleBounds.getNorthEast();\n\t\tvar gMapBounds = L.latLngBounds([[sw.lat(), sw.lng()], [ne.lat(), ne.lng()]]);\n\n\t\tfor (var i=0; i<this._imagesPerTile; i++) {\n\t\t\tvar key2 = key + '/' + i;\n\t\t\tif (key2 in this._freshTiles) { \n\t\t\t\tvar tileBounds = this._map && this._keyToBounds(key);\n\t\t\t\tvar stillVisible = this._map && tileBounds.overlaps(gMapBounds) && (tileZoom == gZoom);\n\n\t\t\t\tif (!stillVisible) delete this._freshTiles[key2]; \n//\t\t\t\tconsole.log('Prunning of ', key, (!stillVisible))\n\t\t\t}\n\t\t}\n\t}\n});\n\n\n// 🍂factory gridLayer.googleMutant(options)\n// Returns a new `GridLayer.GoogleMutant` given its options\nL.gridLayer.googleMutant = function (options) {\n\treturn new L.GridLayer.GoogleMutant(options);\n};\n\n\n//# sourceURL=webpack://ReactLeaflet/./node_modules/leaflet.gridlayer.googlemutant/Leaflet.GoogleMutant.js?");
 
 /***/ }),
-/* 3 */
+
+/***/ "./node_modules/object-assign/index.js":
+/*!*********************************************!*\
+  !*** ./node_modules/object-assign/index.js ***!
+  \*********************************************/
+/*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-	/* WEBPACK VAR INJECTION */(function(process) {/**
-	 * Copyright 2013-present, Facebook, Inc.
-	 * All rights reserved.
-	 *
-	 * This source code is licensed under the BSD-style license found in the
-	 * LICENSE file in the root directory of this source tree. An additional grant
-	 * of patent rights can be found in the PATENTS file in the same directory.
-	 */
-
-	if (process.env.NODE_ENV !== 'production') {
-	  var REACT_ELEMENT_TYPE = (typeof Symbol === 'function' &&
-	    Symbol.for &&
-	    Symbol.for('react.element')) ||
-	    0xeac7;
-
-	  var isValidElement = function(object) {
-	    return typeof object === 'object' &&
-	      object !== null &&
-	      object.$$typeof === REACT_ELEMENT_TYPE;
-	  };
-
-	  // By explicitly using `prop-types` you are opting into new development behavior.
-	  // http://fb.me/prop-types-in-prod
-	  var throwOnDirectAccess = true;
-	  module.exports = __webpack_require__(5)(isValidElement, throwOnDirectAccess);
-	} else {
-	  // By explicitly using `prop-types` you are opting into new production behavior.
-	  // http://fb.me/prop-types-in-prod
-	  module.exports = __webpack_require__(11)();
-	}
-
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(4)))
+"use strict";
+eval("/*\nobject-assign\n(c) Sindre Sorhus\n@license MIT\n*/\n\n\n/* eslint-disable no-unused-vars */\nvar getOwnPropertySymbols = Object.getOwnPropertySymbols;\nvar hasOwnProperty = Object.prototype.hasOwnProperty;\nvar propIsEnumerable = Object.prototype.propertyIsEnumerable;\n\nfunction toObject(val) {\n\tif (val === null || val === undefined) {\n\t\tthrow new TypeError('Object.assign cannot be called with null or undefined');\n\t}\n\n\treturn Object(val);\n}\n\nfunction shouldUseNative() {\n\ttry {\n\t\tif (!Object.assign) {\n\t\t\treturn false;\n\t\t}\n\n\t\t// Detect buggy property enumeration order in older V8 versions.\n\n\t\t// https://bugs.chromium.org/p/v8/issues/detail?id=4118\n\t\tvar test1 = new String('abc');  // eslint-disable-line no-new-wrappers\n\t\ttest1[5] = 'de';\n\t\tif (Object.getOwnPropertyNames(test1)[0] === '5') {\n\t\t\treturn false;\n\t\t}\n\n\t\t// https://bugs.chromium.org/p/v8/issues/detail?id=3056\n\t\tvar test2 = {};\n\t\tfor (var i = 0; i < 10; i++) {\n\t\t\ttest2['_' + String.fromCharCode(i)] = i;\n\t\t}\n\t\tvar order2 = Object.getOwnPropertyNames(test2).map(function (n) {\n\t\t\treturn test2[n];\n\t\t});\n\t\tif (order2.join('') !== '0123456789') {\n\t\t\treturn false;\n\t\t}\n\n\t\t// https://bugs.chromium.org/p/v8/issues/detail?id=3056\n\t\tvar test3 = {};\n\t\t'abcdefghijklmnopqrst'.split('').forEach(function (letter) {\n\t\t\ttest3[letter] = letter;\n\t\t});\n\t\tif (Object.keys(Object.assign({}, test3)).join('') !==\n\t\t\t\t'abcdefghijklmnopqrst') {\n\t\t\treturn false;\n\t\t}\n\n\t\treturn true;\n\t} catch (err) {\n\t\t// We don't expect any of the above to throw, but better to be safe.\n\t\treturn false;\n\t}\n}\n\nmodule.exports = shouldUseNative() ? Object.assign : function (target, source) {\n\tvar from;\n\tvar to = toObject(target);\n\tvar symbols;\n\n\tfor (var s = 1; s < arguments.length; s++) {\n\t\tfrom = Object(arguments[s]);\n\n\t\tfor (var key in from) {\n\t\t\tif (hasOwnProperty.call(from, key)) {\n\t\t\t\tto[key] = from[key];\n\t\t\t}\n\t\t}\n\n\t\tif (getOwnPropertySymbols) {\n\t\t\tsymbols = getOwnPropertySymbols(from);\n\t\t\tfor (var i = 0; i < symbols.length; i++) {\n\t\t\t\tif (propIsEnumerable.call(from, symbols[i])) {\n\t\t\t\t\tto[symbols[i]] = from[symbols[i]];\n\t\t\t\t}\n\t\t\t}\n\t\t}\n\t}\n\n\treturn to;\n};\n\n\n//# sourceURL=webpack://ReactLeaflet/./node_modules/object-assign/index.js?");
 
 /***/ }),
-/* 4 */
+
+/***/ "./node_modules/prop-types/checkPropTypes.js":
+/*!***************************************************!*\
+  !*** ./node_modules/prop-types/checkPropTypes.js ***!
+  \***************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+eval("/**\n * Copyright (c) 2013-present, Facebook, Inc.\n *\n * This source code is licensed under the MIT license found in the\n * LICENSE file in the root directory of this source tree.\n */\n\n\n\nif (true) {\n  var invariant = __webpack_require__(/*! fbjs/lib/invariant */ \"./node_modules/fbjs/lib/invariant.js\");\n  var warning = __webpack_require__(/*! fbjs/lib/warning */ \"./node_modules/fbjs/lib/warning.js\");\n  var ReactPropTypesSecret = __webpack_require__(/*! ./lib/ReactPropTypesSecret */ \"./node_modules/prop-types/lib/ReactPropTypesSecret.js\");\n  var loggedTypeFailures = {};\n}\n\n/**\n * Assert that the values match with the type specs.\n * Error messages are memorized and will only be shown once.\n *\n * @param {object} typeSpecs Map of name to a ReactPropType\n * @param {object} values Runtime values that need to be type-checked\n * @param {string} location e.g. \"prop\", \"context\", \"child context\"\n * @param {string} componentName Name of the component for error messages.\n * @param {?Function} getStack Returns the component stack.\n * @private\n */\nfunction checkPropTypes(typeSpecs, values, location, componentName, getStack) {\n  if (true) {\n    for (var typeSpecName in typeSpecs) {\n      if (typeSpecs.hasOwnProperty(typeSpecName)) {\n        var error;\n        // Prop type validation may throw. In case they do, we don't want to\n        // fail the render phase where it didn't fail before. So we log it.\n        // After these have been cleaned up, we'll let them throw.\n        try {\n          // This is intentionally an invariant that gets caught. It's the same\n          // behavior as without this statement except with a better message.\n          invariant(typeof typeSpecs[typeSpecName] === 'function', '%s: %s type `%s` is invalid; it must be a function, usually from ' + 'the `prop-types` package, but received `%s`.', componentName || 'React class', location, typeSpecName, typeof typeSpecs[typeSpecName]);\n          error = typeSpecs[typeSpecName](values, typeSpecName, componentName, location, null, ReactPropTypesSecret);\n        } catch (ex) {\n          error = ex;\n        }\n        warning(!error || error instanceof Error, '%s: type specification of %s `%s` is invalid; the type checker ' + 'function must return `null` or an `Error` but returned a %s. ' + 'You may have forgotten to pass an argument to the type checker ' + 'creator (arrayOf, instanceOf, objectOf, oneOf, oneOfType, and ' + 'shape all require an argument).', componentName || 'React class', location, typeSpecName, typeof error);\n        if (error instanceof Error && !(error.message in loggedTypeFailures)) {\n          // Only monitor this failure once because there tends to be a lot of the\n          // same error.\n          loggedTypeFailures[error.message] = true;\n\n          var stack = getStack ? getStack() : '';\n\n          warning(false, 'Failed %s type: %s%s', location, error.message, stack != null ? stack : '');\n        }\n      }\n    }\n  }\n}\n\nmodule.exports = checkPropTypes;\n\n\n//# sourceURL=webpack://ReactLeaflet/./node_modules/prop-types/checkPropTypes.js?");
+
+/***/ }),
+
+/***/ "./node_modules/prop-types/factoryWithTypeCheckers.js":
+/*!************************************************************!*\
+  !*** ./node_modules/prop-types/factoryWithTypeCheckers.js ***!
+  \************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+eval("/**\n * Copyright (c) 2013-present, Facebook, Inc.\n *\n * This source code is licensed under the MIT license found in the\n * LICENSE file in the root directory of this source tree.\n */\n\n\n\nvar emptyFunction = __webpack_require__(/*! fbjs/lib/emptyFunction */ \"./node_modules/fbjs/lib/emptyFunction.js\");\nvar invariant = __webpack_require__(/*! fbjs/lib/invariant */ \"./node_modules/fbjs/lib/invariant.js\");\nvar warning = __webpack_require__(/*! fbjs/lib/warning */ \"./node_modules/fbjs/lib/warning.js\");\nvar assign = __webpack_require__(/*! object-assign */ \"./node_modules/object-assign/index.js\");\n\nvar ReactPropTypesSecret = __webpack_require__(/*! ./lib/ReactPropTypesSecret */ \"./node_modules/prop-types/lib/ReactPropTypesSecret.js\");\nvar checkPropTypes = __webpack_require__(/*! ./checkPropTypes */ \"./node_modules/prop-types/checkPropTypes.js\");\n\nmodule.exports = function(isValidElement, throwOnDirectAccess) {\n  /* global Symbol */\n  var ITERATOR_SYMBOL = typeof Symbol === 'function' && Symbol.iterator;\n  var FAUX_ITERATOR_SYMBOL = '@@iterator'; // Before Symbol spec.\n\n  /**\n   * Returns the iterator method function contained on the iterable object.\n   *\n   * Be sure to invoke the function with the iterable as context:\n   *\n   *     var iteratorFn = getIteratorFn(myIterable);\n   *     if (iteratorFn) {\n   *       var iterator = iteratorFn.call(myIterable);\n   *       ...\n   *     }\n   *\n   * @param {?object} maybeIterable\n   * @return {?function}\n   */\n  function getIteratorFn(maybeIterable) {\n    var iteratorFn = maybeIterable && (ITERATOR_SYMBOL && maybeIterable[ITERATOR_SYMBOL] || maybeIterable[FAUX_ITERATOR_SYMBOL]);\n    if (typeof iteratorFn === 'function') {\n      return iteratorFn;\n    }\n  }\n\n  /**\n   * Collection of methods that allow declaration and validation of props that are\n   * supplied to React components. Example usage:\n   *\n   *   var Props = require('ReactPropTypes');\n   *   var MyArticle = React.createClass({\n   *     propTypes: {\n   *       // An optional string prop named \"description\".\n   *       description: Props.string,\n   *\n   *       // A required enum prop named \"category\".\n   *       category: Props.oneOf(['News','Photos']).isRequired,\n   *\n   *       // A prop named \"dialog\" that requires an instance of Dialog.\n   *       dialog: Props.instanceOf(Dialog).isRequired\n   *     },\n   *     render: function() { ... }\n   *   });\n   *\n   * A more formal specification of how these methods are used:\n   *\n   *   type := array|bool|func|object|number|string|oneOf([...])|instanceOf(...)\n   *   decl := ReactPropTypes.{type}(.isRequired)?\n   *\n   * Each and every declaration produces a function with the same signature. This\n   * allows the creation of custom validation functions. For example:\n   *\n   *  var MyLink = React.createClass({\n   *    propTypes: {\n   *      // An optional string or URI prop named \"href\".\n   *      href: function(props, propName, componentName) {\n   *        var propValue = props[propName];\n   *        if (propValue != null && typeof propValue !== 'string' &&\n   *            !(propValue instanceof URI)) {\n   *          return new Error(\n   *            'Expected a string or an URI for ' + propName + ' in ' +\n   *            componentName\n   *          );\n   *        }\n   *      }\n   *    },\n   *    render: function() {...}\n   *  });\n   *\n   * @internal\n   */\n\n  var ANONYMOUS = '<<anonymous>>';\n\n  // Important!\n  // Keep this list in sync with production version in `./factoryWithThrowingShims.js`.\n  var ReactPropTypes = {\n    array: createPrimitiveTypeChecker('array'),\n    bool: createPrimitiveTypeChecker('boolean'),\n    func: createPrimitiveTypeChecker('function'),\n    number: createPrimitiveTypeChecker('number'),\n    object: createPrimitiveTypeChecker('object'),\n    string: createPrimitiveTypeChecker('string'),\n    symbol: createPrimitiveTypeChecker('symbol'),\n\n    any: createAnyTypeChecker(),\n    arrayOf: createArrayOfTypeChecker,\n    element: createElementTypeChecker(),\n    instanceOf: createInstanceTypeChecker,\n    node: createNodeChecker(),\n    objectOf: createObjectOfTypeChecker,\n    oneOf: createEnumTypeChecker,\n    oneOfType: createUnionTypeChecker,\n    shape: createShapeTypeChecker,\n    exact: createStrictShapeTypeChecker,\n  };\n\n  /**\n   * inlined Object.is polyfill to avoid requiring consumers ship their own\n   * https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/is\n   */\n  /*eslint-disable no-self-compare*/\n  function is(x, y) {\n    // SameValue algorithm\n    if (x === y) {\n      // Steps 1-5, 7-10\n      // Steps 6.b-6.e: +0 != -0\n      return x !== 0 || 1 / x === 1 / y;\n    } else {\n      // Step 6.a: NaN == NaN\n      return x !== x && y !== y;\n    }\n  }\n  /*eslint-enable no-self-compare*/\n\n  /**\n   * We use an Error-like object for backward compatibility as people may call\n   * PropTypes directly and inspect their output. However, we don't use real\n   * Errors anymore. We don't inspect their stack anyway, and creating them\n   * is prohibitively expensive if they are created too often, such as what\n   * happens in oneOfType() for any type before the one that matched.\n   */\n  function PropTypeError(message) {\n    this.message = message;\n    this.stack = '';\n  }\n  // Make `instanceof Error` still work for returned errors.\n  PropTypeError.prototype = Error.prototype;\n\n  function createChainableTypeChecker(validate) {\n    if (true) {\n      var manualPropTypeCallCache = {};\n      var manualPropTypeWarningCount = 0;\n    }\n    function checkType(isRequired, props, propName, componentName, location, propFullName, secret) {\n      componentName = componentName || ANONYMOUS;\n      propFullName = propFullName || propName;\n\n      if (secret !== ReactPropTypesSecret) {\n        if (throwOnDirectAccess) {\n          // New behavior only for users of `prop-types` package\n          invariant(\n            false,\n            'Calling PropTypes validators directly is not supported by the `prop-types` package. ' +\n            'Use `PropTypes.checkPropTypes()` to call them. ' +\n            'Read more at http://fb.me/use-check-prop-types'\n          );\n        } else if (\"development\" !== 'production' && typeof console !== 'undefined') {\n          // Old behavior for people using React.PropTypes\n          var cacheKey = componentName + ':' + propName;\n          if (\n            !manualPropTypeCallCache[cacheKey] &&\n            // Avoid spamming the console because they are often not actionable except for lib authors\n            manualPropTypeWarningCount < 3\n          ) {\n            warning(\n              false,\n              'You are manually calling a React.PropTypes validation ' +\n              'function for the `%s` prop on `%s`. This is deprecated ' +\n              'and will throw in the standalone `prop-types` package. ' +\n              'You may be seeing this warning due to a third-party PropTypes ' +\n              'library. See https://fb.me/react-warning-dont-call-proptypes ' + 'for details.',\n              propFullName,\n              componentName\n            );\n            manualPropTypeCallCache[cacheKey] = true;\n            manualPropTypeWarningCount++;\n          }\n        }\n      }\n      if (props[propName] == null) {\n        if (isRequired) {\n          if (props[propName] === null) {\n            return new PropTypeError('The ' + location + ' `' + propFullName + '` is marked as required ' + ('in `' + componentName + '`, but its value is `null`.'));\n          }\n          return new PropTypeError('The ' + location + ' `' + propFullName + '` is marked as required in ' + ('`' + componentName + '`, but its value is `undefined`.'));\n        }\n        return null;\n      } else {\n        return validate(props, propName, componentName, location, propFullName);\n      }\n    }\n\n    var chainedCheckType = checkType.bind(null, false);\n    chainedCheckType.isRequired = checkType.bind(null, true);\n\n    return chainedCheckType;\n  }\n\n  function createPrimitiveTypeChecker(expectedType) {\n    function validate(props, propName, componentName, location, propFullName, secret) {\n      var propValue = props[propName];\n      var propType = getPropType(propValue);\n      if (propType !== expectedType) {\n        // `propValue` being instance of, say, date/regexp, pass the 'object'\n        // check, but we can offer a more precise error message here rather than\n        // 'of type `object`'.\n        var preciseType = getPreciseType(propValue);\n\n        return new PropTypeError('Invalid ' + location + ' `' + propFullName + '` of type ' + ('`' + preciseType + '` supplied to `' + componentName + '`, expected ') + ('`' + expectedType + '`.'));\n      }\n      return null;\n    }\n    return createChainableTypeChecker(validate);\n  }\n\n  function createAnyTypeChecker() {\n    return createChainableTypeChecker(emptyFunction.thatReturnsNull);\n  }\n\n  function createArrayOfTypeChecker(typeChecker) {\n    function validate(props, propName, componentName, location, propFullName) {\n      if (typeof typeChecker !== 'function') {\n        return new PropTypeError('Property `' + propFullName + '` of component `' + componentName + '` has invalid PropType notation inside arrayOf.');\n      }\n      var propValue = props[propName];\n      if (!Array.isArray(propValue)) {\n        var propType = getPropType(propValue);\n        return new PropTypeError('Invalid ' + location + ' `' + propFullName + '` of type ' + ('`' + propType + '` supplied to `' + componentName + '`, expected an array.'));\n      }\n      for (var i = 0; i < propValue.length; i++) {\n        var error = typeChecker(propValue, i, componentName, location, propFullName + '[' + i + ']', ReactPropTypesSecret);\n        if (error instanceof Error) {\n          return error;\n        }\n      }\n      return null;\n    }\n    return createChainableTypeChecker(validate);\n  }\n\n  function createElementTypeChecker() {\n    function validate(props, propName, componentName, location, propFullName) {\n      var propValue = props[propName];\n      if (!isValidElement(propValue)) {\n        var propType = getPropType(propValue);\n        return new PropTypeError('Invalid ' + location + ' `' + propFullName + '` of type ' + ('`' + propType + '` supplied to `' + componentName + '`, expected a single ReactElement.'));\n      }\n      return null;\n    }\n    return createChainableTypeChecker(validate);\n  }\n\n  function createInstanceTypeChecker(expectedClass) {\n    function validate(props, propName, componentName, location, propFullName) {\n      if (!(props[propName] instanceof expectedClass)) {\n        var expectedClassName = expectedClass.name || ANONYMOUS;\n        var actualClassName = getClassName(props[propName]);\n        return new PropTypeError('Invalid ' + location + ' `' + propFullName + '` of type ' + ('`' + actualClassName + '` supplied to `' + componentName + '`, expected ') + ('instance of `' + expectedClassName + '`.'));\n      }\n      return null;\n    }\n    return createChainableTypeChecker(validate);\n  }\n\n  function createEnumTypeChecker(expectedValues) {\n    if (!Array.isArray(expectedValues)) {\n       true ? warning(false, 'Invalid argument supplied to oneOf, expected an instance of array.') : undefined;\n      return emptyFunction.thatReturnsNull;\n    }\n\n    function validate(props, propName, componentName, location, propFullName) {\n      var propValue = props[propName];\n      for (var i = 0; i < expectedValues.length; i++) {\n        if (is(propValue, expectedValues[i])) {\n          return null;\n        }\n      }\n\n      var valuesString = JSON.stringify(expectedValues);\n      return new PropTypeError('Invalid ' + location + ' `' + propFullName + '` of value `' + propValue + '` ' + ('supplied to `' + componentName + '`, expected one of ' + valuesString + '.'));\n    }\n    return createChainableTypeChecker(validate);\n  }\n\n  function createObjectOfTypeChecker(typeChecker) {\n    function validate(props, propName, componentName, location, propFullName) {\n      if (typeof typeChecker !== 'function') {\n        return new PropTypeError('Property `' + propFullName + '` of component `' + componentName + '` has invalid PropType notation inside objectOf.');\n      }\n      var propValue = props[propName];\n      var propType = getPropType(propValue);\n      if (propType !== 'object') {\n        return new PropTypeError('Invalid ' + location + ' `' + propFullName + '` of type ' + ('`' + propType + '` supplied to `' + componentName + '`, expected an object.'));\n      }\n      for (var key in propValue) {\n        if (propValue.hasOwnProperty(key)) {\n          var error = typeChecker(propValue, key, componentName, location, propFullName + '.' + key, ReactPropTypesSecret);\n          if (error instanceof Error) {\n            return error;\n          }\n        }\n      }\n      return null;\n    }\n    return createChainableTypeChecker(validate);\n  }\n\n  function createUnionTypeChecker(arrayOfTypeCheckers) {\n    if (!Array.isArray(arrayOfTypeCheckers)) {\n       true ? warning(false, 'Invalid argument supplied to oneOfType, expected an instance of array.') : undefined;\n      return emptyFunction.thatReturnsNull;\n    }\n\n    for (var i = 0; i < arrayOfTypeCheckers.length; i++) {\n      var checker = arrayOfTypeCheckers[i];\n      if (typeof checker !== 'function') {\n        warning(\n          false,\n          'Invalid argument supplied to oneOfType. Expected an array of check functions, but ' +\n          'received %s at index %s.',\n          getPostfixForTypeWarning(checker),\n          i\n        );\n        return emptyFunction.thatReturnsNull;\n      }\n    }\n\n    function validate(props, propName, componentName, location, propFullName) {\n      for (var i = 0; i < arrayOfTypeCheckers.length; i++) {\n        var checker = arrayOfTypeCheckers[i];\n        if (checker(props, propName, componentName, location, propFullName, ReactPropTypesSecret) == null) {\n          return null;\n        }\n      }\n\n      return new PropTypeError('Invalid ' + location + ' `' + propFullName + '` supplied to ' + ('`' + componentName + '`.'));\n    }\n    return createChainableTypeChecker(validate);\n  }\n\n  function createNodeChecker() {\n    function validate(props, propName, componentName, location, propFullName) {\n      if (!isNode(props[propName])) {\n        return new PropTypeError('Invalid ' + location + ' `' + propFullName + '` supplied to ' + ('`' + componentName + '`, expected a ReactNode.'));\n      }\n      return null;\n    }\n    return createChainableTypeChecker(validate);\n  }\n\n  function createShapeTypeChecker(shapeTypes) {\n    function validate(props, propName, componentName, location, propFullName) {\n      var propValue = props[propName];\n      var propType = getPropType(propValue);\n      if (propType !== 'object') {\n        return new PropTypeError('Invalid ' + location + ' `' + propFullName + '` of type `' + propType + '` ' + ('supplied to `' + componentName + '`, expected `object`.'));\n      }\n      for (var key in shapeTypes) {\n        var checker = shapeTypes[key];\n        if (!checker) {\n          continue;\n        }\n        var error = checker(propValue, key, componentName, location, propFullName + '.' + key, ReactPropTypesSecret);\n        if (error) {\n          return error;\n        }\n      }\n      return null;\n    }\n    return createChainableTypeChecker(validate);\n  }\n\n  function createStrictShapeTypeChecker(shapeTypes) {\n    function validate(props, propName, componentName, location, propFullName) {\n      var propValue = props[propName];\n      var propType = getPropType(propValue);\n      if (propType !== 'object') {\n        return new PropTypeError('Invalid ' + location + ' `' + propFullName + '` of type `' + propType + '` ' + ('supplied to `' + componentName + '`, expected `object`.'));\n      }\n      // We need to check all keys in case some are required but missing from\n      // props.\n      var allKeys = assign({}, props[propName], shapeTypes);\n      for (var key in allKeys) {\n        var checker = shapeTypes[key];\n        if (!checker) {\n          return new PropTypeError(\n            'Invalid ' + location + ' `' + propFullName + '` key `' + key + '` supplied to `' + componentName + '`.' +\n            '\\nBad object: ' + JSON.stringify(props[propName], null, '  ') +\n            '\\nValid keys: ' +  JSON.stringify(Object.keys(shapeTypes), null, '  ')\n          );\n        }\n        var error = checker(propValue, key, componentName, location, propFullName + '.' + key, ReactPropTypesSecret);\n        if (error) {\n          return error;\n        }\n      }\n      return null;\n    }\n\n    return createChainableTypeChecker(validate);\n  }\n\n  function isNode(propValue) {\n    switch (typeof propValue) {\n      case 'number':\n      case 'string':\n      case 'undefined':\n        return true;\n      case 'boolean':\n        return !propValue;\n      case 'object':\n        if (Array.isArray(propValue)) {\n          return propValue.every(isNode);\n        }\n        if (propValue === null || isValidElement(propValue)) {\n          return true;\n        }\n\n        var iteratorFn = getIteratorFn(propValue);\n        if (iteratorFn) {\n          var iterator = iteratorFn.call(propValue);\n          var step;\n          if (iteratorFn !== propValue.entries) {\n            while (!(step = iterator.next()).done) {\n              if (!isNode(step.value)) {\n                return false;\n              }\n            }\n          } else {\n            // Iterator will provide entry [k,v] tuples rather than values.\n            while (!(step = iterator.next()).done) {\n              var entry = step.value;\n              if (entry) {\n                if (!isNode(entry[1])) {\n                  return false;\n                }\n              }\n            }\n          }\n        } else {\n          return false;\n        }\n\n        return true;\n      default:\n        return false;\n    }\n  }\n\n  function isSymbol(propType, propValue) {\n    // Native Symbol.\n    if (propType === 'symbol') {\n      return true;\n    }\n\n    // 19.4.3.5 Symbol.prototype[@@toStringTag] === 'Symbol'\n    if (propValue['@@toStringTag'] === 'Symbol') {\n      return true;\n    }\n\n    // Fallback for non-spec compliant Symbols which are polyfilled.\n    if (typeof Symbol === 'function' && propValue instanceof Symbol) {\n      return true;\n    }\n\n    return false;\n  }\n\n  // Equivalent of `typeof` but with special handling for array and regexp.\n  function getPropType(propValue) {\n    var propType = typeof propValue;\n    if (Array.isArray(propValue)) {\n      return 'array';\n    }\n    if (propValue instanceof RegExp) {\n      // Old webkits (at least until Android 4.0) return 'function' rather than\n      // 'object' for typeof a RegExp. We'll normalize this here so that /bla/\n      // passes PropTypes.object.\n      return 'object';\n    }\n    if (isSymbol(propType, propValue)) {\n      return 'symbol';\n    }\n    return propType;\n  }\n\n  // This handles more types than `getPropType`. Only used for error messages.\n  // See `createPrimitiveTypeChecker`.\n  function getPreciseType(propValue) {\n    if (typeof propValue === 'undefined' || propValue === null) {\n      return '' + propValue;\n    }\n    var propType = getPropType(propValue);\n    if (propType === 'object') {\n      if (propValue instanceof Date) {\n        return 'date';\n      } else if (propValue instanceof RegExp) {\n        return 'regexp';\n      }\n    }\n    return propType;\n  }\n\n  // Returns a string that is postfixed to a warning about an invalid type.\n  // For example, \"undefined\" or \"of type array\"\n  function getPostfixForTypeWarning(value) {\n    var type = getPreciseType(value);\n    switch (type) {\n      case 'array':\n      case 'object':\n        return 'an ' + type;\n      case 'boolean':\n      case 'date':\n      case 'regexp':\n        return 'a ' + type;\n      default:\n        return type;\n    }\n  }\n\n  // Returns class name of the object, if any.\n  function getClassName(propValue) {\n    if (!propValue.constructor || !propValue.constructor.name) {\n      return ANONYMOUS;\n    }\n    return propValue.constructor.name;\n  }\n\n  ReactPropTypes.checkPropTypes = checkPropTypes;\n  ReactPropTypes.PropTypes = ReactPropTypes;\n\n  return ReactPropTypes;\n};\n\n\n//# sourceURL=webpack://ReactLeaflet/./node_modules/prop-types/factoryWithTypeCheckers.js?");
+
+/***/ }),
+
+/***/ "./node_modules/prop-types/index.js":
+/*!******************************************!*\
+  !*** ./node_modules/prop-types/index.js ***!
+  \******************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+eval("/**\n * Copyright (c) 2013-present, Facebook, Inc.\n *\n * This source code is licensed under the MIT license found in the\n * LICENSE file in the root directory of this source tree.\n */\n\nif (true) {\n  var REACT_ELEMENT_TYPE = (typeof Symbol === 'function' &&\n    Symbol.for &&\n    Symbol.for('react.element')) ||\n    0xeac7;\n\n  var isValidElement = function(object) {\n    return typeof object === 'object' &&\n      object !== null &&\n      object.$$typeof === REACT_ELEMENT_TYPE;\n  };\n\n  // By explicitly using `prop-types` you are opting into new development behavior.\n  // http://fb.me/prop-types-in-prod\n  var throwOnDirectAccess = true;\n  module.exports = __webpack_require__(/*! ./factoryWithTypeCheckers */ \"./node_modules/prop-types/factoryWithTypeCheckers.js\")(isValidElement, throwOnDirectAccess);\n} else {}\n\n\n//# sourceURL=webpack://ReactLeaflet/./node_modules/prop-types/index.js?");
+
+/***/ }),
+
+/***/ "./node_modules/prop-types/lib/ReactPropTypesSecret.js":
+/*!*************************************************************!*\
+  !*** ./node_modules/prop-types/lib/ReactPropTypesSecret.js ***!
+  \*************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+eval("/**\n * Copyright (c) 2013-present, Facebook, Inc.\n *\n * This source code is licensed under the MIT license found in the\n * LICENSE file in the root directory of this source tree.\n */\n\n\n\nvar ReactPropTypesSecret = 'SECRET_DO_NOT_PASS_THIS_OR_YOU_WILL_BE_FIRED';\n\nmodule.exports = ReactPropTypesSecret;\n\n\n//# sourceURL=webpack://ReactLeaflet/./node_modules/prop-types/lib/ReactPropTypesSecret.js?");
+
+/***/ }),
+
+/***/ "./src/GoogleLayer.js":
+/*!****************************!*\
+  !*** ./src/GoogleLayer.js ***!
+  \****************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+eval("\n\nObject.defineProperty(exports, \"__esModule\", {\n  value: true\n});\nexports.GOOGLE_LAYER_TYPES = exports.ADDITIONAL_GOOGLE_LAYERS = undefined;\n\nvar _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if (\"value\" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();\n\nvar _get = function get(object, property, receiver) { if (object === null) object = Function.prototype; var desc = Object.getOwnPropertyDescriptor(object, property); if (desc === undefined) { var parent = Object.getPrototypeOf(object); if (parent === null) { return undefined; } else { return get(parent, property, receiver); } } else if (\"value\" in desc) { return desc.value; } else { var getter = desc.get; if (getter === undefined) { return undefined; } return getter.call(receiver); } };\n\nvar _react = __webpack_require__(/*! react */ \"react\");\n\nvar _react2 = _interopRequireDefault(_react);\n\nvar _propTypes = __webpack_require__(/*! prop-types */ \"./node_modules/prop-types/index.js\");\n\nvar _propTypes2 = _interopRequireDefault(_propTypes);\n\nvar _reactLeaflet = __webpack_require__(/*! react-leaflet */ \"react-leaflet\");\n\nvar _LGridLayer = __webpack_require__(/*! ./L.GridLayer.GoogleSubMutant */ \"./src/L.GridLayer.GoogleSubMutant.js\");\n\nfunction _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }\n\nfunction _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError(\"Cannot call a class as a function\"); } }\n\nfunction _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError(\"this hasn't been initialised - super() hasn't been called\"); } return call && (typeof call === \"object\" || typeof call === \"function\") ? call : self; }\n\nfunction _inherits(subClass, superClass) { if (typeof superClass !== \"function\" && superClass !== null) { throw new TypeError(\"Super expression must either be null or a function, not \" + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }\n\nvar ADDITIONAL_GOOGLE_LAYERS = exports.ADDITIONAL_GOOGLE_LAYERS = {\n  TRAFFIC_LAYER: \"TrafficLayer\",\n  TRANSIT_LAYER: \"TransitLayer\"\n};\n\nvar GOOGLE_LAYER_TYPES = exports.GOOGLE_LAYER_TYPES = {\n  ROADMAP: \"roadmap\",\n  SATELLITE: \"satellite\",\n  TERRAIN: \"terrain\",\n  HYDRID: \"hybrid\"\n};\n\nvar GoogleLayer = function (_GridLayer) {\n  _inherits(GoogleLayer, _GridLayer);\n\n  function GoogleLayer() {\n    _classCallCheck(this, GoogleLayer);\n\n    return _possibleConstructorReturn(this, (GoogleLayer.__proto__ || Object.getPrototypeOf(GoogleLayer)).apply(this, arguments));\n  }\n\n  _createClass(GoogleLayer, [{\n    key: \"componentWillMount\",\n    value: function componentWillMount() {\n      _get(GoogleLayer.prototype.__proto__ || Object.getPrototypeOf(GoogleLayer.prototype), \"componentWillMount\", this).call(this);\n      var additionalGoogleLayer = this.props.additionalGoogleLayer;\n\n\n      this.leafletElement = new L.gridLayer.googleSubMutant(this.props);\n\n      if (additionalGoogleLayer) {\n        this.leafletElement.addGoogleLayer(additionalGoogleLayer);\n      }\n    }\n  }, {\n    key: \"componentDidUpdate\",\n    value: function componentDidUpdate(prevProps) {\n      var _props = this.props,\n          opacity = _props.opacity,\n          zIndex = _props.zIndex;\n\n      if (opacity !== prevProps.opacity) {\n        this.leafletElement.setOpacity(opacity);\n      }\n      if (zIndex !== prevProps.zIndex) {\n        this.leafletElement.setZIndex(zIndex);\n      }\n    }\n  }]);\n\n  return GoogleLayer;\n}(_reactLeaflet.GridLayer);\n\nGoogleLayer.propTypes = {\n  googleKey: _propTypes2.default.string.isRequired,\n  type: _propTypes2.default.oneOf(Object.keys(GOOGLE_LAYER_TYPES).map(function (key) {\n    return GOOGLE_LAYER_TYPES[key];\n  })),\n  additionalGoogleLayer: _propTypes2.default.oneOf(Object.keys(ADDITIONAL_GOOGLE_LAYERS).map(function (key) {\n    return ADDITIONAL_GOOGLE_LAYERS[key];\n  })),\n  asClientId: _propTypes2.default.bool,\n  language: _propTypes2.default.string,\n  region: _propTypes2.default.string,\n  libraries: _propTypes2.default.array\n};\nGoogleLayer.defaultProps = {\n  type: GOOGLE_LAYER_TYPES.TERRAIN\n};\nGoogleLayer.contextTypes = _reactLeaflet.GridLayer.contextTypes;\nGoogleLayer.childContextTypes = _reactLeaflet.GridLayer.childContextTypes;\nexports.default = GoogleLayer;\n\n//# sourceURL=webpack://ReactLeaflet/./src/GoogleLayer.js?");
+
+/***/ }),
+
+/***/ "./src/L.GridLayer.GoogleSubMutant.js":
+/*!********************************************!*\
+  !*** ./src/L.GridLayer.GoogleSubMutant.js ***!
+  \********************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+eval("\n\nvar _googleMaps = __webpack_require__(/*! google-maps */ \"google-maps\");\n\nvar _googleMaps2 = _interopRequireDefault(_googleMaps);\n\n__webpack_require__(/*! leaflet.gridlayer.googlemutant */ \"./node_modules/leaflet.gridlayer.googlemutant/Leaflet.GoogleMutant.js\");\n\nfunction _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }\n\nvar GOOGLE_LAYER_TYPES = {\n  ROADMAP: \"ROADMAP\",\n  SATELLITE: \"SATELLITE\",\n  TERRAIN: \"TERRAIN\",\n  HYDRID: \"HYDRIDd\"\n};\n\nL.GridLayer.GoogleSubMutant = L.GridLayer.GoogleMutant.extend({\n  initialize: function initialize(options) {\n    L.GridLayer.GoogleMutant.prototype.initialize.call(this, options);\n\n    var self = this;\n\n    if (options.asClientId) {\n      _googleMaps2.default.CLIENT = options.googleKey;\n      _googleMaps2.default.VERSION = options.version;\n    } else {\n      _googleMaps2.default.KEY = options.googleKey;\n    }\n\n    if (options.language) {\n      _googleMaps2.default.LANGUAGE = options.language;\n    }\n\n    if (options.region) {\n      _googleMaps2.default.REGION = options.region;\n    }\n\n    _googleMaps2.default.LIBRARIES = options.libraries || [];\n\n    self._type = options.type.toUpperCase() || GOOGLE_LAYER_TYPES.SATELLITE;\n\n    _googleMaps2.default.load(function (google) {\n      self._ready = true;\n      self._initMutant();\n      self._update();\n\n      if (options.onAfterLoad) {\n        options.onAfterLoad(google);\n      }\n    });\n  }\n});\n\nL.gridLayer.googleSubMutant = function (options) {\n  return new L.GridLayer.GoogleSubMutant(options);\n};\n\n//# sourceURL=webpack://ReactLeaflet/./src/L.GridLayer.GoogleSubMutant.js?");
+
+/***/ }),
+
+/***/ "./src/index.js":
+/*!**********************!*\
+  !*** ./src/index.js ***!
+  \**********************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+eval("\n\nObject.defineProperty(exports, \"__esModule\", {\n  value: true\n});\nexports.ADDITIONAL_GOOGLE_LAYERS = exports.GOOGLE_LAYER_TYPES = undefined;\n\nvar _GoogleLayer = __webpack_require__(/*! ./GoogleLayer */ \"./src/GoogleLayer.js\");\n\nvar _GoogleLayer2 = _interopRequireDefault(_GoogleLayer);\n\nfunction _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }\n\nexports.GOOGLE_LAYER_TYPES = _GoogleLayer.GOOGLE_LAYER_TYPES;\nexports.ADDITIONAL_GOOGLE_LAYERS = _GoogleLayer.ADDITIONAL_GOOGLE_LAYERS;\nexports.default = _GoogleLayer2.default;\n\n//# sourceURL=webpack://ReactLeaflet/./src/index.js?");
+
+/***/ }),
+
+/***/ "google-maps":
+/*!*******************************************************************************************************************!*\
+  !*** external {"amd":"google-maps","commonjs":"google-maps","commonjs2":"google-maps","root":"GoogleMapsLoader"} ***!
+  \*******************************************************************************************************************/
+/*! no static exports found */
 /***/ (function(module, exports) {
 
-	// shim for using process in browser
-	var process = module.exports = {};
-
-	// cached from whatever global is present so that test runners that stub it
-	// don't break things.  But we need to wrap it in a try catch in case it is
-	// wrapped in strict mode code which doesn't define any globals.  It's inside a
-	// function because try/catches deoptimize in certain engines.
-
-	var cachedSetTimeout;
-	var cachedClearTimeout;
-
-	function defaultSetTimout() {
-	    throw new Error('setTimeout has not been defined');
-	}
-	function defaultClearTimeout () {
-	    throw new Error('clearTimeout has not been defined');
-	}
-	(function () {
-	    try {
-	        if (typeof setTimeout === 'function') {
-	            cachedSetTimeout = setTimeout;
-	        } else {
-	            cachedSetTimeout = defaultSetTimout;
-	        }
-	    } catch (e) {
-	        cachedSetTimeout = defaultSetTimout;
-	    }
-	    try {
-	        if (typeof clearTimeout === 'function') {
-	            cachedClearTimeout = clearTimeout;
-	        } else {
-	            cachedClearTimeout = defaultClearTimeout;
-	        }
-	    } catch (e) {
-	        cachedClearTimeout = defaultClearTimeout;
-	    }
-	} ())
-	function runTimeout(fun) {
-	    if (cachedSetTimeout === setTimeout) {
-	        //normal enviroments in sane situations
-	        return setTimeout(fun, 0);
-	    }
-	    // if setTimeout wasn't available but was latter defined
-	    if ((cachedSetTimeout === defaultSetTimout || !cachedSetTimeout) && setTimeout) {
-	        cachedSetTimeout = setTimeout;
-	        return setTimeout(fun, 0);
-	    }
-	    try {
-	        // when when somebody has screwed with setTimeout but no I.E. maddness
-	        return cachedSetTimeout(fun, 0);
-	    } catch(e){
-	        try {
-	            // When we are in I.E. but the script has been evaled so I.E. doesn't trust the global object when called normally
-	            return cachedSetTimeout.call(null, fun, 0);
-	        } catch(e){
-	            // same as above but when it's a version of I.E. that must have the global object for 'this', hopfully our context correct otherwise it will throw a global error
-	            return cachedSetTimeout.call(this, fun, 0);
-	        }
-	    }
-
-
-	}
-	function runClearTimeout(marker) {
-	    if (cachedClearTimeout === clearTimeout) {
-	        //normal enviroments in sane situations
-	        return clearTimeout(marker);
-	    }
-	    // if clearTimeout wasn't available but was latter defined
-	    if ((cachedClearTimeout === defaultClearTimeout || !cachedClearTimeout) && clearTimeout) {
-	        cachedClearTimeout = clearTimeout;
-	        return clearTimeout(marker);
-	    }
-	    try {
-	        // when when somebody has screwed with setTimeout but no I.E. maddness
-	        return cachedClearTimeout(marker);
-	    } catch (e){
-	        try {
-	            // When we are in I.E. but the script has been evaled so I.E. doesn't  trust the global object when called normally
-	            return cachedClearTimeout.call(null, marker);
-	        } catch (e){
-	            // same as above but when it's a version of I.E. that must have the global object for 'this', hopfully our context correct otherwise it will throw a global error.
-	            // Some versions of I.E. have different rules for clearTimeout vs setTimeout
-	            return cachedClearTimeout.call(this, marker);
-	        }
-	    }
-
-
-
-	}
-	var queue = [];
-	var draining = false;
-	var currentQueue;
-	var queueIndex = -1;
-
-	function cleanUpNextTick() {
-	    if (!draining || !currentQueue) {
-	        return;
-	    }
-	    draining = false;
-	    if (currentQueue.length) {
-	        queue = currentQueue.concat(queue);
-	    } else {
-	        queueIndex = -1;
-	    }
-	    if (queue.length) {
-	        drainQueue();
-	    }
-	}
-
-	function drainQueue() {
-	    if (draining) {
-	        return;
-	    }
-	    var timeout = runTimeout(cleanUpNextTick);
-	    draining = true;
-
-	    var len = queue.length;
-	    while(len) {
-	        currentQueue = queue;
-	        queue = [];
-	        while (++queueIndex < len) {
-	            if (currentQueue) {
-	                currentQueue[queueIndex].run();
-	            }
-	        }
-	        queueIndex = -1;
-	        len = queue.length;
-	    }
-	    currentQueue = null;
-	    draining = false;
-	    runClearTimeout(timeout);
-	}
-
-	process.nextTick = function (fun) {
-	    var args = new Array(arguments.length - 1);
-	    if (arguments.length > 1) {
-	        for (var i = 1; i < arguments.length; i++) {
-	            args[i - 1] = arguments[i];
-	        }
-	    }
-	    queue.push(new Item(fun, args));
-	    if (queue.length === 1 && !draining) {
-	        runTimeout(drainQueue);
-	    }
-	};
-
-	// v8 likes predictible objects
-	function Item(fun, array) {
-	    this.fun = fun;
-	    this.array = array;
-	}
-	Item.prototype.run = function () {
-	    this.fun.apply(null, this.array);
-	};
-	process.title = 'browser';
-	process.browser = true;
-	process.env = {};
-	process.argv = [];
-	process.version = ''; // empty string to avoid regexp issues
-	process.versions = {};
-
-	function noop() {}
-
-	process.on = noop;
-	process.addListener = noop;
-	process.once = noop;
-	process.off = noop;
-	process.removeListener = noop;
-	process.removeAllListeners = noop;
-	process.emit = noop;
-	process.prependListener = noop;
-	process.prependOnceListener = noop;
-
-	process.listeners = function (name) { return [] }
-
-	process.binding = function (name) {
-	    throw new Error('process.binding is not supported');
-	};
-
-	process.cwd = function () { return '/' };
-	process.chdir = function (dir) {
-	    throw new Error('process.chdir is not supported');
-	};
-	process.umask = function() { return 0; };
-
+eval("module.exports = __WEBPACK_EXTERNAL_MODULE_google_maps__;\n\n//# sourceURL=webpack://ReactLeaflet/external_%7B%22amd%22:%22google-maps%22,%22commonjs%22:%22google-maps%22,%22commonjs2%22:%22google-maps%22,%22root%22:%22GoogleMapsLoader%22%7D?");
 
 /***/ }),
-/* 5 */
-/***/ (function(module, exports, __webpack_require__) {
 
-	/* WEBPACK VAR INJECTION */(function(process) {/**
-	 * Copyright 2013-present, Facebook, Inc.
-	 * All rights reserved.
-	 *
-	 * This source code is licensed under the BSD-style license found in the
-	 * LICENSE file in the root directory of this source tree. An additional grant
-	 * of patent rights can be found in the PATENTS file in the same directory.
-	 */
-
-	'use strict';
-
-	var emptyFunction = __webpack_require__(6);
-	var invariant = __webpack_require__(7);
-	var warning = __webpack_require__(8);
-
-	var ReactPropTypesSecret = __webpack_require__(9);
-	var checkPropTypes = __webpack_require__(10);
-
-	module.exports = function(isValidElement, throwOnDirectAccess) {
-	  /* global Symbol */
-	  var ITERATOR_SYMBOL = typeof Symbol === 'function' && Symbol.iterator;
-	  var FAUX_ITERATOR_SYMBOL = '@@iterator'; // Before Symbol spec.
-
-	  /**
-	   * Returns the iterator method function contained on the iterable object.
-	   *
-	   * Be sure to invoke the function with the iterable as context:
-	   *
-	   *     var iteratorFn = getIteratorFn(myIterable);
-	   *     if (iteratorFn) {
-	   *       var iterator = iteratorFn.call(myIterable);
-	   *       ...
-	   *     }
-	   *
-	   * @param {?object} maybeIterable
-	   * @return {?function}
-	   */
-	  function getIteratorFn(maybeIterable) {
-	    var iteratorFn = maybeIterable && (ITERATOR_SYMBOL && maybeIterable[ITERATOR_SYMBOL] || maybeIterable[FAUX_ITERATOR_SYMBOL]);
-	    if (typeof iteratorFn === 'function') {
-	      return iteratorFn;
-	    }
-	  }
-
-	  /**
-	   * Collection of methods that allow declaration and validation of props that are
-	   * supplied to React components. Example usage:
-	   *
-	   *   var Props = require('ReactPropTypes');
-	   *   var MyArticle = React.createClass({
-	   *     propTypes: {
-	   *       // An optional string prop named "description".
-	   *       description: Props.string,
-	   *
-	   *       // A required enum prop named "category".
-	   *       category: Props.oneOf(['News','Photos']).isRequired,
-	   *
-	   *       // A prop named "dialog" that requires an instance of Dialog.
-	   *       dialog: Props.instanceOf(Dialog).isRequired
-	   *     },
-	   *     render: function() { ... }
-	   *   });
-	   *
-	   * A more formal specification of how these methods are used:
-	   *
-	   *   type := array|bool|func|object|number|string|oneOf([...])|instanceOf(...)
-	   *   decl := ReactPropTypes.{type}(.isRequired)?
-	   *
-	   * Each and every declaration produces a function with the same signature. This
-	   * allows the creation of custom validation functions. For example:
-	   *
-	   *  var MyLink = React.createClass({
-	   *    propTypes: {
-	   *      // An optional string or URI prop named "href".
-	   *      href: function(props, propName, componentName) {
-	   *        var propValue = props[propName];
-	   *        if (propValue != null && typeof propValue !== 'string' &&
-	   *            !(propValue instanceof URI)) {
-	   *          return new Error(
-	   *            'Expected a string or an URI for ' + propName + ' in ' +
-	   *            componentName
-	   *          );
-	   *        }
-	   *      }
-	   *    },
-	   *    render: function() {...}
-	   *  });
-	   *
-	   * @internal
-	   */
-
-	  var ANONYMOUS = '<<anonymous>>';
-
-	  // Important!
-	  // Keep this list in sync with production version in `./factoryWithThrowingShims.js`.
-	  var ReactPropTypes = {
-	    array: createPrimitiveTypeChecker('array'),
-	    bool: createPrimitiveTypeChecker('boolean'),
-	    func: createPrimitiveTypeChecker('function'),
-	    number: createPrimitiveTypeChecker('number'),
-	    object: createPrimitiveTypeChecker('object'),
-	    string: createPrimitiveTypeChecker('string'),
-	    symbol: createPrimitiveTypeChecker('symbol'),
-
-	    any: createAnyTypeChecker(),
-	    arrayOf: createArrayOfTypeChecker,
-	    element: createElementTypeChecker(),
-	    instanceOf: createInstanceTypeChecker,
-	    node: createNodeChecker(),
-	    objectOf: createObjectOfTypeChecker,
-	    oneOf: createEnumTypeChecker,
-	    oneOfType: createUnionTypeChecker,
-	    shape: createShapeTypeChecker
-	  };
-
-	  /**
-	   * inlined Object.is polyfill to avoid requiring consumers ship their own
-	   * https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/is
-	   */
-	  /*eslint-disable no-self-compare*/
-	  function is(x, y) {
-	    // SameValue algorithm
-	    if (x === y) {
-	      // Steps 1-5, 7-10
-	      // Steps 6.b-6.e: +0 != -0
-	      return x !== 0 || 1 / x === 1 / y;
-	    } else {
-	      // Step 6.a: NaN == NaN
-	      return x !== x && y !== y;
-	    }
-	  }
-	  /*eslint-enable no-self-compare*/
-
-	  /**
-	   * We use an Error-like object for backward compatibility as people may call
-	   * PropTypes directly and inspect their output. However, we don't use real
-	   * Errors anymore. We don't inspect their stack anyway, and creating them
-	   * is prohibitively expensive if they are created too often, such as what
-	   * happens in oneOfType() for any type before the one that matched.
-	   */
-	  function PropTypeError(message) {
-	    this.message = message;
-	    this.stack = '';
-	  }
-	  // Make `instanceof Error` still work for returned errors.
-	  PropTypeError.prototype = Error.prototype;
-
-	  function createChainableTypeChecker(validate) {
-	    if (process.env.NODE_ENV !== 'production') {
-	      var manualPropTypeCallCache = {};
-	      var manualPropTypeWarningCount = 0;
-	    }
-	    function checkType(isRequired, props, propName, componentName, location, propFullName, secret) {
-	      componentName = componentName || ANONYMOUS;
-	      propFullName = propFullName || propName;
-
-	      if (secret !== ReactPropTypesSecret) {
-	        if (throwOnDirectAccess) {
-	          // New behavior only for users of `prop-types` package
-	          invariant(
-	            false,
-	            'Calling PropTypes validators directly is not supported by the `prop-types` package. ' +
-	            'Use `PropTypes.checkPropTypes()` to call them. ' +
-	            'Read more at http://fb.me/use-check-prop-types'
-	          );
-	        } else if (process.env.NODE_ENV !== 'production' && typeof console !== 'undefined') {
-	          // Old behavior for people using React.PropTypes
-	          var cacheKey = componentName + ':' + propName;
-	          if (
-	            !manualPropTypeCallCache[cacheKey] &&
-	            // Avoid spamming the console because they are often not actionable except for lib authors
-	            manualPropTypeWarningCount < 3
-	          ) {
-	            warning(
-	              false,
-	              'You are manually calling a React.PropTypes validation ' +
-	              'function for the `%s` prop on `%s`. This is deprecated ' +
-	              'and will throw in the standalone `prop-types` package. ' +
-	              'You may be seeing this warning due to a third-party PropTypes ' +
-	              'library. See https://fb.me/react-warning-dont-call-proptypes ' + 'for details.',
-	              propFullName,
-	              componentName
-	            );
-	            manualPropTypeCallCache[cacheKey] = true;
-	            manualPropTypeWarningCount++;
-	          }
-	        }
-	      }
-	      if (props[propName] == null) {
-	        if (isRequired) {
-	          if (props[propName] === null) {
-	            return new PropTypeError('The ' + location + ' `' + propFullName + '` is marked as required ' + ('in `' + componentName + '`, but its value is `null`.'));
-	          }
-	          return new PropTypeError('The ' + location + ' `' + propFullName + '` is marked as required in ' + ('`' + componentName + '`, but its value is `undefined`.'));
-	        }
-	        return null;
-	      } else {
-	        return validate(props, propName, componentName, location, propFullName);
-	      }
-	    }
-
-	    var chainedCheckType = checkType.bind(null, false);
-	    chainedCheckType.isRequired = checkType.bind(null, true);
-
-	    return chainedCheckType;
-	  }
-
-	  function createPrimitiveTypeChecker(expectedType) {
-	    function validate(props, propName, componentName, location, propFullName, secret) {
-	      var propValue = props[propName];
-	      var propType = getPropType(propValue);
-	      if (propType !== expectedType) {
-	        // `propValue` being instance of, say, date/regexp, pass the 'object'
-	        // check, but we can offer a more precise error message here rather than
-	        // 'of type `object`'.
-	        var preciseType = getPreciseType(propValue);
-
-	        return new PropTypeError('Invalid ' + location + ' `' + propFullName + '` of type ' + ('`' + preciseType + '` supplied to `' + componentName + '`, expected ') + ('`' + expectedType + '`.'));
-	      }
-	      return null;
-	    }
-	    return createChainableTypeChecker(validate);
-	  }
-
-	  function createAnyTypeChecker() {
-	    return createChainableTypeChecker(emptyFunction.thatReturnsNull);
-	  }
-
-	  function createArrayOfTypeChecker(typeChecker) {
-	    function validate(props, propName, componentName, location, propFullName) {
-	      if (typeof typeChecker !== 'function') {
-	        return new PropTypeError('Property `' + propFullName + '` of component `' + componentName + '` has invalid PropType notation inside arrayOf.');
-	      }
-	      var propValue = props[propName];
-	      if (!Array.isArray(propValue)) {
-	        var propType = getPropType(propValue);
-	        return new PropTypeError('Invalid ' + location + ' `' + propFullName + '` of type ' + ('`' + propType + '` supplied to `' + componentName + '`, expected an array.'));
-	      }
-	      for (var i = 0; i < propValue.length; i++) {
-	        var error = typeChecker(propValue, i, componentName, location, propFullName + '[' + i + ']', ReactPropTypesSecret);
-	        if (error instanceof Error) {
-	          return error;
-	        }
-	      }
-	      return null;
-	    }
-	    return createChainableTypeChecker(validate);
-	  }
-
-	  function createElementTypeChecker() {
-	    function validate(props, propName, componentName, location, propFullName) {
-	      var propValue = props[propName];
-	      if (!isValidElement(propValue)) {
-	        var propType = getPropType(propValue);
-	        return new PropTypeError('Invalid ' + location + ' `' + propFullName + '` of type ' + ('`' + propType + '` supplied to `' + componentName + '`, expected a single ReactElement.'));
-	      }
-	      return null;
-	    }
-	    return createChainableTypeChecker(validate);
-	  }
-
-	  function createInstanceTypeChecker(expectedClass) {
-	    function validate(props, propName, componentName, location, propFullName) {
-	      if (!(props[propName] instanceof expectedClass)) {
-	        var expectedClassName = expectedClass.name || ANONYMOUS;
-	        var actualClassName = getClassName(props[propName]);
-	        return new PropTypeError('Invalid ' + location + ' `' + propFullName + '` of type ' + ('`' + actualClassName + '` supplied to `' + componentName + '`, expected ') + ('instance of `' + expectedClassName + '`.'));
-	      }
-	      return null;
-	    }
-	    return createChainableTypeChecker(validate);
-	  }
-
-	  function createEnumTypeChecker(expectedValues) {
-	    if (!Array.isArray(expectedValues)) {
-	      process.env.NODE_ENV !== 'production' ? warning(false, 'Invalid argument supplied to oneOf, expected an instance of array.') : void 0;
-	      return emptyFunction.thatReturnsNull;
-	    }
-
-	    function validate(props, propName, componentName, location, propFullName) {
-	      var propValue = props[propName];
-	      for (var i = 0; i < expectedValues.length; i++) {
-	        if (is(propValue, expectedValues[i])) {
-	          return null;
-	        }
-	      }
-
-	      var valuesString = JSON.stringify(expectedValues);
-	      return new PropTypeError('Invalid ' + location + ' `' + propFullName + '` of value `' + propValue + '` ' + ('supplied to `' + componentName + '`, expected one of ' + valuesString + '.'));
-	    }
-	    return createChainableTypeChecker(validate);
-	  }
-
-	  function createObjectOfTypeChecker(typeChecker) {
-	    function validate(props, propName, componentName, location, propFullName) {
-	      if (typeof typeChecker !== 'function') {
-	        return new PropTypeError('Property `' + propFullName + '` of component `' + componentName + '` has invalid PropType notation inside objectOf.');
-	      }
-	      var propValue = props[propName];
-	      var propType = getPropType(propValue);
-	      if (propType !== 'object') {
-	        return new PropTypeError('Invalid ' + location + ' `' + propFullName + '` of type ' + ('`' + propType + '` supplied to `' + componentName + '`, expected an object.'));
-	      }
-	      for (var key in propValue) {
-	        if (propValue.hasOwnProperty(key)) {
-	          var error = typeChecker(propValue, key, componentName, location, propFullName + '.' + key, ReactPropTypesSecret);
-	          if (error instanceof Error) {
-	            return error;
-	          }
-	        }
-	      }
-	      return null;
-	    }
-	    return createChainableTypeChecker(validate);
-	  }
-
-	  function createUnionTypeChecker(arrayOfTypeCheckers) {
-	    if (!Array.isArray(arrayOfTypeCheckers)) {
-	      process.env.NODE_ENV !== 'production' ? warning(false, 'Invalid argument supplied to oneOfType, expected an instance of array.') : void 0;
-	      return emptyFunction.thatReturnsNull;
-	    }
-
-	    for (var i = 0; i < arrayOfTypeCheckers.length; i++) {
-	      var checker = arrayOfTypeCheckers[i];
-	      if (typeof checker !== 'function') {
-	        warning(
-	          false,
-	          'Invalid argument supplid to oneOfType. Expected an array of check functions, but ' +
-	          'received %s at index %s.',
-	          getPostfixForTypeWarning(checker),
-	          i
-	        );
-	        return emptyFunction.thatReturnsNull;
-	      }
-	    }
-
-	    function validate(props, propName, componentName, location, propFullName) {
-	      for (var i = 0; i < arrayOfTypeCheckers.length; i++) {
-	        var checker = arrayOfTypeCheckers[i];
-	        if (checker(props, propName, componentName, location, propFullName, ReactPropTypesSecret) == null) {
-	          return null;
-	        }
-	      }
-
-	      return new PropTypeError('Invalid ' + location + ' `' + propFullName + '` supplied to ' + ('`' + componentName + '`.'));
-	    }
-	    return createChainableTypeChecker(validate);
-	  }
-
-	  function createNodeChecker() {
-	    function validate(props, propName, componentName, location, propFullName) {
-	      if (!isNode(props[propName])) {
-	        return new PropTypeError('Invalid ' + location + ' `' + propFullName + '` supplied to ' + ('`' + componentName + '`, expected a ReactNode.'));
-	      }
-	      return null;
-	    }
-	    return createChainableTypeChecker(validate);
-	  }
-
-	  function createShapeTypeChecker(shapeTypes) {
-	    function validate(props, propName, componentName, location, propFullName) {
-	      var propValue = props[propName];
-	      var propType = getPropType(propValue);
-	      if (propType !== 'object') {
-	        return new PropTypeError('Invalid ' + location + ' `' + propFullName + '` of type `' + propType + '` ' + ('supplied to `' + componentName + '`, expected `object`.'));
-	      }
-	      for (var key in shapeTypes) {
-	        var checker = shapeTypes[key];
-	        if (!checker) {
-	          continue;
-	        }
-	        var error = checker(propValue, key, componentName, location, propFullName + '.' + key, ReactPropTypesSecret);
-	        if (error) {
-	          return error;
-	        }
-	      }
-	      return null;
-	    }
-	    return createChainableTypeChecker(validate);
-	  }
-
-	  function isNode(propValue) {
-	    switch (typeof propValue) {
-	      case 'number':
-	      case 'string':
-	      case 'undefined':
-	        return true;
-	      case 'boolean':
-	        return !propValue;
-	      case 'object':
-	        if (Array.isArray(propValue)) {
-	          return propValue.every(isNode);
-	        }
-	        if (propValue === null || isValidElement(propValue)) {
-	          return true;
-	        }
-
-	        var iteratorFn = getIteratorFn(propValue);
-	        if (iteratorFn) {
-	          var iterator = iteratorFn.call(propValue);
-	          var step;
-	          if (iteratorFn !== propValue.entries) {
-	            while (!(step = iterator.next()).done) {
-	              if (!isNode(step.value)) {
-	                return false;
-	              }
-	            }
-	          } else {
-	            // Iterator will provide entry [k,v] tuples rather than values.
-	            while (!(step = iterator.next()).done) {
-	              var entry = step.value;
-	              if (entry) {
-	                if (!isNode(entry[1])) {
-	                  return false;
-	                }
-	              }
-	            }
-	          }
-	        } else {
-	          return false;
-	        }
-
-	        return true;
-	      default:
-	        return false;
-	    }
-	  }
-
-	  function isSymbol(propType, propValue) {
-	    // Native Symbol.
-	    if (propType === 'symbol') {
-	      return true;
-	    }
-
-	    // 19.4.3.5 Symbol.prototype[@@toStringTag] === 'Symbol'
-	    if (propValue['@@toStringTag'] === 'Symbol') {
-	      return true;
-	    }
-
-	    // Fallback for non-spec compliant Symbols which are polyfilled.
-	    if (typeof Symbol === 'function' && propValue instanceof Symbol) {
-	      return true;
-	    }
-
-	    return false;
-	  }
-
-	  // Equivalent of `typeof` but with special handling for array and regexp.
-	  function getPropType(propValue) {
-	    var propType = typeof propValue;
-	    if (Array.isArray(propValue)) {
-	      return 'array';
-	    }
-	    if (propValue instanceof RegExp) {
-	      // Old webkits (at least until Android 4.0) return 'function' rather than
-	      // 'object' for typeof a RegExp. We'll normalize this here so that /bla/
-	      // passes PropTypes.object.
-	      return 'object';
-	    }
-	    if (isSymbol(propType, propValue)) {
-	      return 'symbol';
-	    }
-	    return propType;
-	  }
-
-	  // This handles more types than `getPropType`. Only used for error messages.
-	  // See `createPrimitiveTypeChecker`.
-	  function getPreciseType(propValue) {
-	    if (typeof propValue === 'undefined' || propValue === null) {
-	      return '' + propValue;
-	    }
-	    var propType = getPropType(propValue);
-	    if (propType === 'object') {
-	      if (propValue instanceof Date) {
-	        return 'date';
-	      } else if (propValue instanceof RegExp) {
-	        return 'regexp';
-	      }
-	    }
-	    return propType;
-	  }
-
-	  // Returns a string that is postfixed to a warning about an invalid type.
-	  // For example, "undefined" or "of type array"
-	  function getPostfixForTypeWarning(value) {
-	    var type = getPreciseType(value);
-	    switch (type) {
-	      case 'array':
-	      case 'object':
-	        return 'an ' + type;
-	      case 'boolean':
-	      case 'date':
-	      case 'regexp':
-	        return 'a ' + type;
-	      default:
-	        return type;
-	    }
-	  }
-
-	  // Returns class name of the object, if any.
-	  function getClassName(propValue) {
-	    if (!propValue.constructor || !propValue.constructor.name) {
-	      return ANONYMOUS;
-	    }
-	    return propValue.constructor.name;
-	  }
-
-	  ReactPropTypes.checkPropTypes = checkPropTypes;
-	  ReactPropTypes.PropTypes = ReactPropTypes;
-
-	  return ReactPropTypes;
-	};
-
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(4)))
-
-/***/ }),
-/* 6 */
+/***/ "react":
+/*!**************************************************************************************!*\
+  !*** external {"amd":"react","commonjs":"react","commonjs2":"react","root":"React"} ***!
+  \**************************************************************************************/
+/*! no static exports found */
 /***/ (function(module, exports) {
 
-	"use strict";
-
-	/**
-	 * Copyright (c) 2013-present, Facebook, Inc.
-	 * All rights reserved.
-	 *
-	 * This source code is licensed under the BSD-style license found in the
-	 * LICENSE file in the root directory of this source tree. An additional grant
-	 * of patent rights can be found in the PATENTS file in the same directory.
-	 *
-	 * 
-	 */
-
-	function makeEmptyFunction(arg) {
-	  return function () {
-	    return arg;
-	  };
-	}
-
-	/**
-	 * This function accepts and discards inputs; it has no side effects. This is
-	 * primarily useful idiomatically for overridable function endpoints which
-	 * always need to be callable, since JS lacks a null-call idiom ala Cocoa.
-	 */
-	var emptyFunction = function emptyFunction() {};
-
-	emptyFunction.thatReturns = makeEmptyFunction;
-	emptyFunction.thatReturnsFalse = makeEmptyFunction(false);
-	emptyFunction.thatReturnsTrue = makeEmptyFunction(true);
-	emptyFunction.thatReturnsNull = makeEmptyFunction(null);
-	emptyFunction.thatReturnsThis = function () {
-	  return this;
-	};
-	emptyFunction.thatReturnsArgument = function (arg) {
-	  return arg;
-	};
-
-	module.exports = emptyFunction;
+eval("module.exports = __WEBPACK_EXTERNAL_MODULE_react__;\n\n//# sourceURL=webpack://ReactLeaflet/external_%7B%22amd%22:%22react%22,%22commonjs%22:%22react%22,%22commonjs2%22:%22react%22,%22root%22:%22React%22%7D?");
 
 /***/ }),
-/* 7 */
-/***/ (function(module, exports, __webpack_require__) {
 
-	/* WEBPACK VAR INJECTION */(function(process) {/**
-	 * Copyright (c) 2013-present, Facebook, Inc.
-	 * All rights reserved.
-	 *
-	 * This source code is licensed under the BSD-style license found in the
-	 * LICENSE file in the root directory of this source tree. An additional grant
-	 * of patent rights can be found in the PATENTS file in the same directory.
-	 *
-	 */
-
-	'use strict';
-
-	/**
-	 * Use invariant() to assert state which your program assumes to be true.
-	 *
-	 * Provide sprintf-style format (only %s is supported) and arguments
-	 * to provide information about what broke and what you were
-	 * expecting.
-	 *
-	 * The invariant message will be stripped in production, but the invariant
-	 * will remain to ensure logic does not differ in production.
-	 */
-
-	var validateFormat = function validateFormat(format) {};
-
-	if (process.env.NODE_ENV !== 'production') {
-	  validateFormat = function validateFormat(format) {
-	    if (format === undefined) {
-	      throw new Error('invariant requires an error message argument');
-	    }
-	  };
-	}
-
-	function invariant(condition, format, a, b, c, d, e, f) {
-	  validateFormat(format);
-
-	  if (!condition) {
-	    var error;
-	    if (format === undefined) {
-	      error = new Error('Minified exception occurred; use the non-minified dev environment ' + 'for the full error message and additional helpful warnings.');
-	    } else {
-	      var args = [a, b, c, d, e, f];
-	      var argIndex = 0;
-	      error = new Error(format.replace(/%s/g, function () {
-	        return args[argIndex++];
-	      }));
-	      error.name = 'Invariant Violation';
-	    }
-
-	    error.framesToPop = 1; // we don't care about invariant's own frame
-	    throw error;
-	  }
-	}
-
-	module.exports = invariant;
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(4)))
-
-/***/ }),
-/* 8 */
-/***/ (function(module, exports, __webpack_require__) {
-
-	/* WEBPACK VAR INJECTION */(function(process) {/**
-	 * Copyright 2014-2015, Facebook, Inc.
-	 * All rights reserved.
-	 *
-	 * This source code is licensed under the BSD-style license found in the
-	 * LICENSE file in the root directory of this source tree. An additional grant
-	 * of patent rights can be found in the PATENTS file in the same directory.
-	 *
-	 */
-
-	'use strict';
-
-	var emptyFunction = __webpack_require__(6);
-
-	/**
-	 * Similar to invariant but only logs a warning if the condition is not met.
-	 * This can be used to log issues in development environments in critical
-	 * paths. Removing the logging code for production environments will keep the
-	 * same logic and follow the same code paths.
-	 */
-
-	var warning = emptyFunction;
-
-	if (process.env.NODE_ENV !== 'production') {
-	  var printWarning = function printWarning(format) {
-	    for (var _len = arguments.length, args = Array(_len > 1 ? _len - 1 : 0), _key = 1; _key < _len; _key++) {
-	      args[_key - 1] = arguments[_key];
-	    }
-
-	    var argIndex = 0;
-	    var message = 'Warning: ' + format.replace(/%s/g, function () {
-	      return args[argIndex++];
-	    });
-	    if (typeof console !== 'undefined') {
-	      console.error(message);
-	    }
-	    try {
-	      // --- Welcome to debugging React ---
-	      // This error was thrown as a convenience so that you can use this stack
-	      // to find the callsite that caused this warning to fire.
-	      throw new Error(message);
-	    } catch (x) {}
-	  };
-
-	  warning = function warning(condition, format) {
-	    if (format === undefined) {
-	      throw new Error('`warning(condition, format, ...args)` requires a warning ' + 'message argument');
-	    }
-
-	    if (format.indexOf('Failed Composite propType: ') === 0) {
-	      return; // Ignore CompositeComponent proptype check.
-	    }
-
-	    if (!condition) {
-	      for (var _len2 = arguments.length, args = Array(_len2 > 2 ? _len2 - 2 : 0), _key2 = 2; _key2 < _len2; _key2++) {
-	        args[_key2 - 2] = arguments[_key2];
-	      }
-
-	      printWarning.apply(undefined, [format].concat(args));
-	    }
-	  };
-	}
-
-	module.exports = warning;
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(4)))
-
-/***/ }),
-/* 9 */
+/***/ "react-leaflet":
+/*!***********************************************************************************************!*\
+  !*** external {"amd":"react-leaflet","commonjs":"react-leaflet","commonjs2":"react-leaflet"} ***!
+  \***********************************************************************************************/
+/*! no static exports found */
 /***/ (function(module, exports) {
 
-	/**
-	 * Copyright 2013-present, Facebook, Inc.
-	 * All rights reserved.
-	 *
-	 * This source code is licensed under the BSD-style license found in the
-	 * LICENSE file in the root directory of this source tree. An additional grant
-	 * of patent rights can be found in the PATENTS file in the same directory.
-	 */
-
-	'use strict';
-
-	var ReactPropTypesSecret = 'SECRET_DO_NOT_PASS_THIS_OR_YOU_WILL_BE_FIRED';
-
-	module.exports = ReactPropTypesSecret;
-
-
-/***/ }),
-/* 10 */
-/***/ (function(module, exports, __webpack_require__) {
-
-	/* WEBPACK VAR INJECTION */(function(process) {/**
-	 * Copyright 2013-present, Facebook, Inc.
-	 * All rights reserved.
-	 *
-	 * This source code is licensed under the BSD-style license found in the
-	 * LICENSE file in the root directory of this source tree. An additional grant
-	 * of patent rights can be found in the PATENTS file in the same directory.
-	 */
-
-	'use strict';
-
-	if (process.env.NODE_ENV !== 'production') {
-	  var invariant = __webpack_require__(7);
-	  var warning = __webpack_require__(8);
-	  var ReactPropTypesSecret = __webpack_require__(9);
-	  var loggedTypeFailures = {};
-	}
-
-	/**
-	 * Assert that the values match with the type specs.
-	 * Error messages are memorized and will only be shown once.
-	 *
-	 * @param {object} typeSpecs Map of name to a ReactPropType
-	 * @param {object} values Runtime values that need to be type-checked
-	 * @param {string} location e.g. "prop", "context", "child context"
-	 * @param {string} componentName Name of the component for error messages.
-	 * @param {?Function} getStack Returns the component stack.
-	 * @private
-	 */
-	function checkPropTypes(typeSpecs, values, location, componentName, getStack) {
-	  if (process.env.NODE_ENV !== 'production') {
-	    for (var typeSpecName in typeSpecs) {
-	      if (typeSpecs.hasOwnProperty(typeSpecName)) {
-	        var error;
-	        // Prop type validation may throw. In case they do, we don't want to
-	        // fail the render phase where it didn't fail before. So we log it.
-	        // After these have been cleaned up, we'll let them throw.
-	        try {
-	          // This is intentionally an invariant that gets caught. It's the same
-	          // behavior as without this statement except with a better message.
-	          invariant(typeof typeSpecs[typeSpecName] === 'function', '%s: %s type `%s` is invalid; it must be a function, usually from ' + 'React.PropTypes.', componentName || 'React class', location, typeSpecName);
-	          error = typeSpecs[typeSpecName](values, typeSpecName, componentName, location, null, ReactPropTypesSecret);
-	        } catch (ex) {
-	          error = ex;
-	        }
-	        warning(!error || error instanceof Error, '%s: type specification of %s `%s` is invalid; the type checker ' + 'function must return `null` or an `Error` but returned a %s. ' + 'You may have forgotten to pass an argument to the type checker ' + 'creator (arrayOf, instanceOf, objectOf, oneOf, oneOfType, and ' + 'shape all require an argument).', componentName || 'React class', location, typeSpecName, typeof error);
-	        if (error instanceof Error && !(error.message in loggedTypeFailures)) {
-	          // Only monitor this failure once because there tends to be a lot of the
-	          // same error.
-	          loggedTypeFailures[error.message] = true;
-
-	          var stack = getStack ? getStack() : '';
-
-	          warning(false, 'Failed %s type: %s%s', location, error.message, stack != null ? stack : '');
-	        }
-	      }
-	    }
-	  }
-	}
-
-	module.exports = checkPropTypes;
-
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(4)))
-
-/***/ }),
-/* 11 */
-/***/ (function(module, exports, __webpack_require__) {
-
-	/**
-	 * Copyright 2013-present, Facebook, Inc.
-	 * All rights reserved.
-	 *
-	 * This source code is licensed under the BSD-style license found in the
-	 * LICENSE file in the root directory of this source tree. An additional grant
-	 * of patent rights can be found in the PATENTS file in the same directory.
-	 */
-
-	'use strict';
-
-	var emptyFunction = __webpack_require__(6);
-	var invariant = __webpack_require__(7);
-	var ReactPropTypesSecret = __webpack_require__(9);
-
-	module.exports = function() {
-	  function shim(props, propName, componentName, location, propFullName, secret) {
-	    if (secret === ReactPropTypesSecret) {
-	      // It is still safe when called from React.
-	      return;
-	    }
-	    invariant(
-	      false,
-	      'Calling PropTypes validators directly is not supported by the `prop-types` package. ' +
-	      'Use PropTypes.checkPropTypes() to call them. ' +
-	      'Read more at http://fb.me/use-check-prop-types'
-	    );
-	  };
-	  shim.isRequired = shim;
-	  function getShim() {
-	    return shim;
-	  };
-	  // Important!
-	  // Keep this list in sync with production version in `./factoryWithTypeCheckers.js`.
-	  var ReactPropTypes = {
-	    array: shim,
-	    bool: shim,
-	    func: shim,
-	    number: shim,
-	    object: shim,
-	    string: shim,
-	    symbol: shim,
-
-	    any: shim,
-	    arrayOf: getShim,
-	    element: shim,
-	    instanceOf: getShim,
-	    node: shim,
-	    objectOf: getShim,
-	    oneOf: getShim,
-	    oneOfType: getShim,
-	    shape: getShim
-	  };
-
-	  ReactPropTypes.checkPropTypes = emptyFunction;
-	  ReactPropTypes.PropTypes = ReactPropTypes;
-
-	  return ReactPropTypes;
-	};
-
-
-/***/ }),
-/* 12 */
-/***/ (function(module, exports) {
-
-	module.exports = __WEBPACK_EXTERNAL_MODULE_12__;
-
-/***/ }),
-/* 13 */
-/***/ (function(module, exports, __webpack_require__) {
-
-	'use strict';
-
-	// Based on https://github.com/shramov/leaflet-plugins
-	// GridLayer like https://avinmathew.com/leaflet-and-google-maps/ , but using MutationObserver instead of jQuery
-	var GoogleMapsLoader = __webpack_require__(14);
-
-	GoogleMapsLoader.VERSION = '3.18';
-
-	// 🍂class GridLayer.GoogleMutant
-	// 🍂extends GridLayer
-	L.GridLayer.GoogleMutant = L.GridLayer.extend({
-	  includes: L.Evented,
-
-	  options: {
-	    minZoom: 0,
-	    maxZoom: 18,
-	    tileSize: 256,
-	    subdomains: 'abc',
-	    errorTileUrl: '',
-	    attribution: '', // The mutant container will add its own attribution anyways.
-	    opacity: 1,
-	    continuousWorld: false,
-	    noWrap: false,
-	    // 🍂option type: String = 'roadmap'
-	    // Google's map type. Valid values are 'roadmap', 'satellite' or 'terrain'. 'hybrid' is not really supported.
-	    type: 'satellite',
-	    maxNativeZoom: 21
-	  },
-
-	  initialize: function initialize(options) {
-	    L.GridLayer.prototype.initialize.call(this, options);
-	    var self = this;
-
-	    if (options.asclientid) {
-	      GoogleMapsLoader.CLIENT = options.googlekey;
-	    } else {
-	      GoogleMapsLoader.KEY = options.googlekey;
-	    }
-
-	    GoogleMapsLoader.LIBRARIES = options.libraries || [];
-
-	    self._type = options.maptype || 'SATELLITE';
-
-	    GoogleMapsLoader.load(function (_google) {
-	      google = _google;
-	      self._ready = true;
-	      //self._initMapObject();
-	      // self.
-	      self._initMutant();
-	      self._update();
-
-	      if (options.onAfterLoad) {
-	        options.onAfterLoad(google);
-	      }
-
-	      //this._ready = google.maps.Map !== undefined;
-	      //if (!this._ready) L.Google.asyncWait.push(this);
-	    });
-
-	    // Couple data structures indexed by tile key
-	    this._tileCallbacks = {}; // Callbacks for promises for tiles that are expected
-	    this._freshTiles = {}; // Tiles from the mutant which haven't been requested yet
-
-	    this._imagesPerTile = self._type === 'hybrid' ? 2 : 1;
-	    this.createTile = self._type === 'hybrid' ? this._createMultiTile : this._createSingleTile;
-	  },
-
-	  onAdd: function onAdd(map) {
-	    L.GridLayer.prototype.onAdd.call(this, map);
-	    this._initMutantContainer();
-
-	    // this._GAPIPromise.then(function () {
-	    if (this._ready) {
-	      this._map = map;
-
-	      this._initMutant();
-
-	      map.on('viewreset', this._reset, this);
-	      map.on('move', this._update, this);
-	      map.on('zoomend', this._handleZoomAnim, this);
-	      map.on('resize', this._resize, this);
-
-	      //20px instead of 1em to avoid a slight overlap with google's attribution
-	      map._controlCorners.bottomright.style.marginBottom = '20px';
-
-	      this._reset();
-	      this._update();
-	    }
-	    //}.bind(this));
-	  },
-
-	  onRemove: function onRemove(map) {
-	    L.GridLayer.prototype.onRemove.call(this, map);
-	    map._container.removeChild(this._mutantContainer);
-	    this._mutantContainer = undefined;
-
-	    map.off('viewreset', this._reset, this);
-	    map.off('move', this._update, this);
-	    map.off('zoomend', this._handleZoomAnim, this);
-	    map.off('resize', this._resize, this);
-
-	    if (map._controlCorners) map._controlCorners.bottomright.style.marginBottom = '0em';
-	  },
-
-	  getAttribution: function getAttribution() {
-	    return this.options.attribution;
-	  },
-
-	  setOpacity: function setOpacity(opacity) {
-	    this.options.opacity = opacity;
-	    if (opacity < 1) {
-	      L.DomUtil.setOpacity(this._mutantContainer, opacity);
-	    }
-	  },
-
-	  setElementSize: function setElementSize(e, size) {
-	    e.style.width = size.x + 'px';
-	    e.style.height = size.y + 'px';
-	  },
-
-	  _initMutantContainer: function _initMutantContainer() {
-	    if (!this._mutantContainer) {
-	      this._mutantContainer = L.DomUtil.create('div', 'leaflet-google-mutant leaflet-top leaflet-left');
-	      this._mutantContainer.id = '_MutantContainer_' + L.Util.stamp(this._mutantContainer);
-	      // 			this._mutantContainer.style.zIndex = 'auto';
-	      this._mutantContainer.style.pointerEvents = 'none';
-
-	      this._map.getContainer().appendChild(this._mutantContainer);
-	    }
-
-	    this.setOpacity(this.options.opacity);
-	    this.setElementSize(this._mutantContainer, this._map.getSize());
-
-	    this._attachObserver(this._mutantContainer);
-	  },
-
-	  _initMutant: function _initMutant() {
-	    if (!this._ready || !this._mutantContainer) return;
-	    this._mutantCenter = new google.maps.LatLng(0, 0);
-
-	    var map = new google.maps.Map(this._mutantContainer, {
-	      center: this._mutantCenter,
-	      zoom: 0,
-	      tilt: 0,
-	      mapTypeId: google.maps.MapTypeId[this._type],
-	      disableDefaultUI: true,
-	      keyboardShortcuts: false,
-	      draggable: false,
-	      disableDoubleClickZoom: true,
-	      scrollwheel: false,
-	      streetViewControl: false,
-	      styles: this.options.styles || {},
-	      backgroundColor: 'transparent'
-	    });
-
-	    this._mutant = map;
-
-	    // 🍂event spawned
-	    // Fired when the mutant has been created.
-	    this.fire('spawned', {
-	      mapObject: map
-	    });
-	  },
-
-	  _attachObserver: function _attachObserver(node) {
-	    // 		console.log('Gonna observe', node);
-
-	    var observer = new MutationObserver(this._onMutations.bind(this));
-
-	    // pass in the target node, as well as the observer options
-	    observer.observe(node, {
-	      childList: true,
-	      subtree: true
-	    });
-	  },
-
-	  _onMutations: function _onMutations(mutations) {
-	    for (var i = 0; i < mutations.length; ++i) {
-	      var mutation = mutations[i];
-	      for (var j = 0; j < mutation.addedNodes.length; ++j) {
-	        var node = mutation.addedNodes[j];
-
-	        if (node instanceof HTMLImageElement) {
-	          this._onMutatedImage(node);
-	        } else if (node instanceof HTMLElement) {
-	          Array.prototype.forEach.call(node.querySelectorAll('img'), this._onMutatedImage.bind(this));
-	        }
-	      }
-	    }
-	  },
-
-	  // Only images which 'src' attrib match this will be considered for moving around.
-	  // Looks like some kind of string-based protobuf, maybe??
-	  // Only the roads (and terrain, and vector-based stuff) match this pattern
-	  _roadRegexp: /!1i(\d+)!2i(\d+)!3i(\d+)!/,
-
-	  // On the other hand, raster imagery matches this other pattern
-	  _satRegexp: /x=(\d+)&y=(\d+)&z=(\d+)/,
-
-	  // On small viewports, when zooming in/out, a static image is requested
-	  // This will not be moved around, just removed from the DOM.
-	  _staticRegExp: /StaticMapService\.GetMapImage/,
-
-	  _onMutatedImage: function _onMutatedImage(imgNode) {
-	    // 		if (imgNode.src) {
-	    // 			console.log('caught mutated image: ', imgNode.src);
-	    // 		}
-
-	    var coords;
-	    var match = imgNode.src.match(this._roadRegexp);
-	    var sublayer, parent;
-
-	    if (match) {
-	      coords = {
-	        z: match[1],
-	        x: match[2],
-	        y: match[3]
-	      };
-	      if (this._imagesPerTile > 1) {
-	        imgNode.style.zIndex = 1;
-	      }
-	      sublayer = 1;
-	    } else {
-	      match = imgNode.src.match(this._satRegexp);
-	      if (match) {
-	        coords = {
-	          x: match[1],
-	          y: match[2],
-	          z: match[3]
-	        };
-	      }
-	      // 			imgNode.style.zIndex = 0;
-	      sublayer = 0;
-	    }
-
-	    if (coords) {
-	      var key = this._tileCoordsToKey(coords);
-	      imgNode.style.position = 'absolute';
-	      if (this._imagesPerTile > 1) {
-	        key += '/' + sublayer;
-	      }
-	      if (key in this._tileCallbacks && this._tileCallbacks[key]) {
-	        // console.log('Fullfilling callback ', key);
-	        this._tileCallbacks[key].pop()(imgNode);
-	        if (!this._tileCallbacks[key].length) {
-	          delete this._tileCallbacks[key];
-	        }
-	      } else {
-	        // console.log('Caching for later', key);
-	        parent = imgNode.parentNode;
-	        if (parent) {
-	          parent.removeChild(imgNode);
-	          parent.removeChild = L.Util.falseFn;
-	          // 					imgNode.parentNode.replaceChild(L.DomUtil.create('img'), imgNode);
-	        }
-	        if (key in this._freshTiles) {
-	          this._freshTiles[key].push(imgNode);
-	        } else {
-	          this._freshTiles[key] = [imgNode];
-	        }
-	      }
-	    } else if (imgNode.src.match(this._staticRegExp)) {
-	      parent = imgNode.parentNode;
-	      if (parent) {
-	        // Remove the image, but don't store it anywhere.
-	        // Image needs to be replaced instead of removed, as the container
-	        // seems to be reused.
-	        imgNode.parentNode.replaceChild(L.DomUtil.create('img'), imgNode);
-	      }
-	    }
-	  },
-
-	  // This will be used as this.createTile for 'roadmap', 'sat', 'terrain'
-	  _createSingleTile: function createTile(coords, done) {
-	    var key = this._tileCoordsToKey(coords);
-	    // console.log('Need:', key);
-
-	    if (key in this._freshTiles) {
-	      var tile = this._freshTiles[key].pop();
-	      if (!this._freshTiles[key].length) {
-	        delete this._freshTiles[key];
-	      }
-	      L.Util.requestAnimFrame(done);
-	      // 			console.log('Got ', key, ' from _freshTiles');
-	      return tile;
-	    } else {
-	      var tileContainer = L.DomUtil.create('div');
-	      this._tileCallbacks[key] = this._tileCallbacks[key] || [];
-	      this._tileCallbacks[key].push(function (c /*, k*/) {
-	        return function (imgNode) {
-	          var parent = imgNode.parentNode;
-	          if (parent) {
-	            parent.removeChild(imgNode);
-	            parent.removeChild = L.Util.falseFn;
-	            // 						imgNode.parentNode.replaceChild(L.DomUtil.create('img'), imgNode);
-	          }
-	          c.appendChild(imgNode);
-	          done();
-	          // 					console.log('Sent ', k, ' to _tileCallbacks');
-	        }.bind(this);
-	      }.bind(this)(tileContainer /*, key*/));
-
-	      return tileContainer;
-	    }
-	  },
-
-	  // This will be used as this.createTile for 'hybrid'
-	  _createMultiTile: function createTile(coords, done) {
-	    var key = this._tileCoordsToKey(coords);
-
-	    var tileContainer = L.DomUtil.create('div');
-	    tileContainer.dataset.pending = this._imagesPerTile;
-
-	    for (var i = 0; i < this._imagesPerTile; i++) {
-	      var key2 = key + '/' + i;
-	      if (key2 in this._freshTiles) {
-	        tileContainer.appendChild(this._freshTiles[key2].pop());
-	        if (!this._freshTiles[key2].length) {
-	          delete this._freshTiles[key2];
-	        }
-	        tileContainer.dataset.pending--;
-	        // 				console.log('Got ', key2, ' from _freshTiles');
-	      } else {
-	        this._tileCallbacks[key2] = this._tileCallbacks[key2] || [];
-	        this._tileCallbacks[key2].push(function (c /*, k2*/) {
-	          return function (imgNode) {
-	            var parent = imgNode.parentNode;
-	            if (parent) {
-	              parent.removeChild(imgNode);
-	              parent.removeChild = L.Util.falseFn;
-	              // 							imgNode.parentNode.replaceChild(L.DomUtil.create('img'), imgNode);
-	            }
-	            c.appendChild(imgNode);
-	            c.dataset.pending--;
-	            if (!parseInt(c.dataset.pending)) {
-	              done();
-	            }
-	            // 						console.log('Sent ', k2, ' to _tileCallbacks, still ', c.dataset.pending, ' images to go');
-	          }.bind(this);
-	        }.bind(this)(tileContainer /*, key2*/));
-	      }
-	    }
-
-	    if (!parseInt(tileContainer.dataset.pending)) {
-	      L.Util.requestAnimFrame(done);
-	    }
-	    return tileContainer;
-	  },
-
-	  _checkZoomLevels: function _checkZoomLevels() {
-	    //setting the zoom level on the Google map may result in a different zoom level than the one requested
-	    //(it won't go beyond the level for which they have data).
-	    // verify and make sure the zoom levels on both Leaflet and Google maps are consistent
-	    if (this._map.getZoom() !== undefined && this._mutant.getZoom() !== this._map.getZoom()) {
-	      //zoom levels are out of sync. Set the leaflet zoom level to match the google one
-	      this._map.setZoom(this._mutant.getZoom());
-	    }
-	  },
-
-	  _reset: function _reset() {
-	    this._initContainer();
-	  },
-
-	  _update: function _update() {
-	    L.GridLayer.prototype._update.call(this);
-	    if (!this._mutant) return;
-
-	    var center = this._map.getCenter();
-	    var _center = new google.maps.LatLng(center.lat, center.lng);
-
-	    this._mutant.setCenter(_center);
-	    var zoom = this._map.getZoom();
-	    if (zoom !== undefined) {
-	      this._mutant.setZoom(Math.round(this._map.getZoom()));
-	    }
-	  },
-
-	  _resize: function _resize() {
-	    var size = this._map.getSize();
-	    if (this._mutantContainer.style.width === size.x && this._mutantContainer.style.height === size.y) return;
-	    this.setElementSize(this._mutantContainer, size);
-	    if (!this._mutant) return;
-	    google.maps.event.trigger(this._mutant, 'resize');
-	  },
-
-	  _handleZoomAnim: function _handleZoomAnim() {
-	    var center = this._map.getCenter();
-	    var _center = new google.maps.LatLng(center.lat, center.lng);
-
-	    this._mutant.setCenter(_center);
-	    this._mutant.setZoom(Math.round(this._map.getZoom()));
-	  },
-
-	  // Agressively prune _freshtiles when a tile with the same key is removed,
-	  // this prevents a problem where Leaflet keeps a loaded tile longer than
-	  // GMaps, so that GMaps makes two requests but Leaflet only consumes one,
-	  // polluting _freshTiles with stale data.
-	  _removeTile: function _removeTile(key) {
-	    if (this._imagesPerTile > 1) {
-	      for (var i = 0; i < this._imagesPerTile; i++) {
-	        var key2 = key + '/' + i;
-	        if (key2 in this._freshTiles) {
-	          delete this._freshTiles[key2];
-	        }
-	        // 				console.log('Pruned spurious hybrid _freshTiles');
-	      }
-	    } else {
-	      if (key in this._freshTiles) {
-	        delete this._freshTiles[key];
-	        // 				console.log('Pruned spurious _freshTiles', key);
-	      }
-	    }
-
-	    return L.GridLayer.prototype._removeTile.call(this, key);
-	  }
-	});
-
-	// 🍂factory gridLayer.googleMutant(options)
-	// Returns a new `GridLayer.GoogleMutant` given its options
-	L.gridLayer.googleMutant = function (options) {
-	  return new L.GridLayer.GoogleMutant(options);
-	};
-
-/***/ }),
-/* 14 */
-/***/ (function(module, exports) {
-
-	module.exports = __WEBPACK_EXTERNAL_MODULE_14__;
+eval("module.exports = __WEBPACK_EXTERNAL_MODULE_react_leaflet__;\n\n//# sourceURL=webpack://ReactLeaflet/external_%7B%22amd%22:%22react-leaflet%22,%22commonjs%22:%22react-leaflet%22,%22commonjs2%22:%22react-leaflet%22%7D?");
 
 /***/ })
-/******/ ])
+
+/******/ });
 });
-;
