@@ -1,6 +1,6 @@
 {
   "name": "react-leaflet-google-tile-layer",
-  "version": "4.0.11",
+  "version": "4.1.0",
   "description": "google layer as React compoment for Leaflet",
   "main": "dist/react-leaflet-google-tile-layer.js",
   "scripts": {
