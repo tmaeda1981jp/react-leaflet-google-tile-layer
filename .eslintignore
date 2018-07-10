@@ -1,0 +1,5 @@
+dist
+images
+.vscode
+.idea
+node_modules

@@ -1,8 +1,6 @@
-import React from 'react';
-import { render } from 'react-dom';
-import GoogleExample from "./GoogleExample";
-
-
+import React from 'react'
+import { render } from 'react-dom'
+import GoogleExample from './GoogleExample'
 
 const example = (
   <div>
@@ -11,4 +9,4 @@ const example = (
   </div>
 )
 
-render(example, document.getElementById('app'));
+render(example, document.getElementById('app'))
