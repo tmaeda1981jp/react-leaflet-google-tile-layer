@@ -1,6 +1,6 @@
 {
   "name": "react-leaflet-google-tile-layer",
-  "version": "4.1.0",
+  "version": "5.0.0",
   "description": "google layer as React compoment for Leaflet",
   "main": "dist/react-leaflet-google-tile-layer.js",
   "scripts": {
@@ -21,7 +21,10 @@
     }
   },
   "lint-staged": {
-    "*.{js}": ["prettier --write", "git add"]
+    "*.{js}": [
+      "prettier --write",
+      "git add"
+    ]
   },
   "repository": {
     "type": "git",
