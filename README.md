@@ -1,4 +1,5 @@
 # react-leaflet-google [![npm version](https://img.shields.io/badge/npm-5.4.0-blue.svg)](https://www.npmjs.com/package/react-leaflet-google)
+
 GoogleMaps layer as React component for Leaflet build on top of [React-Leaflet](https://github.com/PaulLeCam/react-leaflet). 
 
 The google maps layer is using the plugin from [Leaflet.GridLayer.GoogleMutant](https://gitlab.com/IvanSanchez/Leaflet.GridLayer.GoogleMutant) 
@@ -7,33 +8,47 @@ Also it uses [google-maps](https://www.npmjs.com/package/google-maps), a wrapper
 
 ![Example](images/example.gif)
 
-# supported versions
-- "react-leaflet": "^1.0.1"
-- "leaflet": "^1.0.3"
-- "react": "^15.5.0"
-
-
 # Getting started
 
 ```
 import { Map, TileLayer, LayersControl } from 'react-leaflet'
-import {GoogleLayer} from '../src'
+import GoogleLayer, { GOOGLE_LAYER_TYPES, ADDITIONAL_GOOGLE_LAYERS } from '../src'
+
 const { BaseLayer } = LayersControl;
 const key = 'Your Key goes here';
-const terrain = 'TERRAIN';
-const road = 'ROADMAP';
-
+const settings = {
+  center: [42.09618442380296, -71.5045166015625],
+  zoom: 2,
+}
 
 ....
+  <Map {...settings}>  
+    <LayersControl position="topright">
+      <BaseLayer checked name='Google Maps Roadmap'>
+        <GoogleLayer 
+          googleKey={KEY} 
+          maxZoom={MAX_ZOOM} 
+          type={GOOGLE_LAYER_TYPES.ROADMAP} 
+        />
+      </BaseLayer>
+    </LayersControl>
+  </Map>
+```
 
-  <BaseLayer checked name='Google Maps Roads'>
-     <GoogleLayer googlekey={key}  maptype={road}/>
-  </BaseLayer>
-  <BaseLayer  name='Google Maps Terrain'>
-     <GoogleLayer googlekey={key}  maptype={terrain} />
-  </BaseLayer>
+# Layers 
 
+```
+export const ADDITIONAL_GOOGLE_LAYERS = {
+  TRAFFIC_LAYER: 'TrafficLayer',
+  TRANSIT_LAYER: 'TransitLayer',
+}
 
+export const GOOGLE_LAYER_TYPES = {
+  ROADMAP: 'roadmap',
+  SATELLITE: 'satellite',
+  TERRAIN: 'terrain',
+  HYDRID: 'hybrid',
+}
 ```
 
 For more details on how to use this plugin check the example.

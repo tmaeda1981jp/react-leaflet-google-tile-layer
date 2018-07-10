@@ -1,6 +1,6 @@
 {
   "name": "react-leaflet-google-tile-layer",
-  "version": "5.0.0",
+  "version": "5.0.2",
   "description": "google layer as React compoment for Leaflet",
   "main": "dist/react-leaflet-google-tile-layer.js",
   "scripts": {
@@ -12,7 +12,6 @@
     "release:major": "npm version major && git push --follow-tags",
     "release:minor": "npm version minor && git push --follow-tags",
     "release:patch": "npm version patch && git push --follow-tags",
-    "publish": "npm publish",
     "pretty": "prettier --write \"{src,example}/**/*.js\""
   },
   "husky": {
@@ -60,6 +59,7 @@
     "babel-preset-env": "^1.7.0",
     "babel-preset-es2015": "^6.24.1",
     "babel-preset-react": "^6.0.15",
+    "babel-preset-stage-0": "^6.24.1",
     "eslint": "4.19.1",
     "eslint-plugin-react": "^7.9.1",
     "husky": "^1.0.0-rc.13",
@@ -70,7 +70,6 @@
     "webpack-dev-server": "^3.1.4"
   },
   "dependencies": {
-    "babel-preset-stage-0": "^6.24.1",
     "google-maps": "^3.3.0",
     "leaflet": "^1.3.1",
     "leaflet.gridlayer.googlemutant": "^0.7.0",
