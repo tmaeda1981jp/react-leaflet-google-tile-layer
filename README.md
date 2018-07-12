@@ -1,4 +1,4 @@
-# react-leaflet-google [![npm version](https://img.shields.io/badge/npm-5.4.0-blue.svg)](https://www.npmjs.com/package/react-leaflet-google)
+# react-leaflet-google [![npm version](https://img.shields.io/badge/npm-5.4.0-blue.svg)](https://www.npmjs.com/package/react-leaflet-google) [![Greenkeeper badge](https://badges.greenkeeper.io/skyeer/react-leaflet-google-tile-layer.svg)](https://greenkeeper.io/)
 
 GoogleMaps layer as React component for Leaflet build on top of [React-Leaflet](https://github.com/PaulLeCam/react-leaflet). 
 
