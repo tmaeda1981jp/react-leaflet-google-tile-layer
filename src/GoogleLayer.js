@@ -42,7 +42,7 @@ class GoogleLayer extends GridLayer {
       layer.addGoogleLayer(additionalGoogleLayer)
     }
 
-    return LeafletGoogleLayer(props)
+    return layer
   }
 
   componentDidUpdate(prevProps) {
