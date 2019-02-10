@@ -45,6 +45,14 @@ class GoogleLayer extends GridLayer {
     return layer
   }
 
+  addLayer(layer) {
+    this.leafletElement.addGoogleLayer(layer)
+  }
+
+  removeLayer(layer) {
+    this.leafletElement.removeGoogleLayer(layer)
+  }
+
   componentDidUpdate(prevProps) {
     const { opacity, zIndex } = this.props
     if (opacity !== prevProps.opacity) {
