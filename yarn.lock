@@ -3019,10 +3019,9 @@ globby@^6.1.0:
     pify "^2.0.0"
     pinkie-promise "^2.0.0"
 
-google-maps@^3.3.0:
+google-maps@tmaeda1981jp/Js-GoogleMapsLoader#master:
   version "3.3.0"
-  resolved "https://registry.yarnpkg.com/google-maps/-/google-maps-3.3.0.tgz#4432b4715406bc15268ad35b1dd1b04d974956a6"
-  integrity sha512-pj4En0cWKG+lcBvC7qrzu5ItiMsYNTgjG2capsPzAbAM/O8ftugGpUUftTTwdGL8KlNvB4CEZ6IBWwpWYzUEpw==
+  resolved "https://codeload.github.com/tmaeda1981jp/Js-GoogleMapsLoader/tar.gz/9c302bf91b077fcb173f8c6f17d283b2aded2f47"
 
 graceful-fs@^4.1.11, graceful-fs@^4.1.15, graceful-fs@^4.1.2, graceful-fs@^4.1.4:
   version "4.1.15"
